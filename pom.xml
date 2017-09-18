@@ -12,6 +12,7 @@
         <module>Generic</module>
         <module>TargetRetail</module>
         <module>Wikipedia</module>
+        <module>BankOfAmerica</module>
 
     </modules>
 
