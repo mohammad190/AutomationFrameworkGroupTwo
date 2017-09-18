@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Wikipedia Automation Test" parallel="false">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://www.wikipedia.org/"/>
+    <test name="wiki Test">
+        <classes>
+            <class name="testWikipedia.TestWikiHome"/>
+            <class name="testWikipedia.testWikiSearchOption"/>
+            <class name="testWikipedia.TestWikiMainPage"/>
+            <class name="testWikipedia.testWikiCreateAccount"/>
+            <class name="testWikipedia.testWikiLoginPage"/>
+        </classes>
+    </test>
+</suite>
