@@ -13,6 +13,7 @@
         <module>TargetRetail</module>
         <module>Wikipedia</module>
         <module>BankOfAmerica</module>
+        <module>Amazon</module>
 
     </modules>
 
