@@ -1,5 +1,6 @@
 package WellsFargo_BankFeatures;
 
+import base.CommonAPI;
 import org.apache.commons.lang3.math.IEEE754rUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

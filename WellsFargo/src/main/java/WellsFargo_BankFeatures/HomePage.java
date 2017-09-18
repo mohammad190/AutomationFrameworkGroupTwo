@@ -1,10 +1,11 @@
 package WellsFargo_BankFeatures;
 
+import base.CommonAPI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class HomePage extends CommonAPI{
+public class HomePage extends CommonAPI {
 
     @FindBy(how = How.XPATH,using = ".//*[@id='signUp']/a[1]")
     public static WebElement EnrollNow;
@@ -39,7 +40,7 @@ public class HomePage extends CommonAPI{
     @FindBy(how = How.CSS,using = "#signUp>a")
     public static WebElement Privacy_cookies_security;
 
-    @FindBy(how = How.CSS,using = ".thumbText>span")
+    @FindBy(how = How.XPATH,using = ".//*[@id='banking']/div[2]/ul/li[2]/a")
     public static WebElement BankingMadeEasy;
 
     @FindBy(how = How.CSS,using = ".thumbText>span")

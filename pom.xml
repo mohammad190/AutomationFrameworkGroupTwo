@@ -10,6 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>Generic</module>
+        <module>Twitter</module>
+        <module>WellsFargo</module>
     </modules>
 
     <dependencyManagement>

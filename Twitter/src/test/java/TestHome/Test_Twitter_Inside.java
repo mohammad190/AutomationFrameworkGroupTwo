@@ -2,7 +2,7 @@ package TestHome;
 
 import Twitter_Features.Inside_Twitter_features;
 import Twitter_Features.T_Login_T_LogOut;
-import WellsFargo_BankFeatures.CommonAPI;
+import base.CommonAPI;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 

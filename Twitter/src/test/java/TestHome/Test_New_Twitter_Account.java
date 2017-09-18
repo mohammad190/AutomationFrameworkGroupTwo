@@ -1,7 +1,7 @@
 package TestHome;
 
 import Twitter_Features.Twitter_New_Account;
-import WellsFargo_BankFeatures.CommonAPI;
+import base.CommonAPI;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 

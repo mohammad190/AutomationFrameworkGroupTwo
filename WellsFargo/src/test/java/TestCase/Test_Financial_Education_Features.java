@@ -1,6 +1,6 @@
 package TestCase;
 
-import WellsFargo_BankFeatures.CommonAPI;
+import base.CommonAPI;
 import WellsFargo_BankFeatures.Financial_Education;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;

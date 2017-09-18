@@ -1,7 +1,7 @@
 package TestCase;
 
 import WellsFargo_BankFeatures.Accounts_Catagory;
-import WellsFargo_BankFeatures.CommonAPI;
+import base.CommonAPI;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
