@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Target Automation Test" parallel="false">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://www.target.com/"/>
+    <test name="Targets Test">
+        <classes>
+            <class name="testTargetRetail.testHomePage"/>
+            <class name="testTargetRetail.testSigninPage"/>
+            <class name="testTargetRetail.testCreateAccount"/>
+        </classes>
+    </test>
+</suite>

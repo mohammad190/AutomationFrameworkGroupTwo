@@ -10,8 +10,10 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>Generic</module>
-        <module>Twitter</module>
-        <module>WellsFargo</module>
+        <module>TargetRetail</module>
+        <module>Wikipedia</module>
+        <module>BankOfAmerica</module>
+
     </modules>
 
     <dependencyManagement>
@@ -73,6 +75,5 @@
 
         </plugins>
     </build>
-
 
 </project>
