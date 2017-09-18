@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "WordPress Automation" parallel="tests">
+
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="url" value="http://demosite.center/wordpress/wp-login.php"/>
+    <parameter name="File_Path" value="C:\Users\Local Account\IdeaProjects\PNTAutomationGroupTwo\WordPressTesting\src\main\java\excelFiles\LoginCredentials.xlsx"/>
+    <parameter name="sheetName" value="Logintest"/>
+
+    <test name="BankOfAmerica Automation">
+        <classes>
+            <class name="home.TestWordPressLogin"/>
+        </classes>
+    </test>
+
+</suite>

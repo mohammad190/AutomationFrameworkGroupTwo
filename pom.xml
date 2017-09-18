@@ -16,6 +16,7 @@
         <module>Amazon</module>
         <module>Twitter</module>
         <module>WellsFargo</module>
+        <module>WordPressTesting</module>
 
     </modules>
 
