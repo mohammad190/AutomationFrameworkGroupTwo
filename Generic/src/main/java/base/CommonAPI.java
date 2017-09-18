@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -12,6 +14,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class CommonAPI {
@@ -43,6 +46,25 @@ public class CommonAPI {
             driver = new OperaDriver();
         } else {
             System.err.println("ERROR: Choose from: Firefox/Chrome/IE/Opera.");
+        }
+        return driver;
+    }
+
+    public WebDriver get_Cloud_Driver(String envName, String envUsername, String envAccessKey, String OS,
+                                      String OS_Version, String Browser_Name, String Browser_Version) throws Exception {
+
+        DesiredCapabilities cap = new DesiredCapabilities();
+        cap.setCapability("Browser", Browser_Name);
+        cap.setCapability("Browser_Version", Browser_Version);
+        cap.setCapability("OS", OS);
+        cap.setCapability("OS_Version", OS_Version);
+
+        if(envName.equalsIgnoreCase("Saucelabs")) {
+            driver = new RemoteWebDriver(new URL
+                    ("http://" + envUsername + ":" + envAccessKey + "@ondemand.saucelabs.com:80/wd/hub"), cap);
+        } else if (envName.equalsIgnoreCase("Browserstack")) {
+            driver = new RemoteWebDriver(new URL
+                    ("http://" + envUsername + ":" + envAccessKey + "@hub-cloud.browserstack.com/wd/hub"), cap);
         }
         return driver;
     }

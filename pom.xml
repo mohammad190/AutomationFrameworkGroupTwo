@@ -14,6 +14,8 @@
         <module>Wikipedia</module>
         <module>BankOfAmerica</module>
         <module>Amazon</module>
+        <module>Twitter</module>
+        <module>WellsFargo</module>
 
     </modules>
 
