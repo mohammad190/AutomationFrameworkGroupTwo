@@ -21,27 +21,42 @@ public class CommonAPI {
 
     public static WebDriver driver;
 
+    private String saucelabs_username = "";
+    private String saucelabs_accesskey = "";
+    private String browserstack_username = "";
+    private String browserstack_accesskey = "";
+
     @Parameters({"browser","url"})
     @BeforeMethod
-    public void launch_Browser_Open_Application(String browser, String url) {
-        get_Local_Driver(browser);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.navigate().to(url);
-        driver.manage().window().maximize();
+    public void setUp(boolean useCloudEnv, String cloudEnvName, String OS, String OS_Version,
+                      String Browser_Version, String Browser_Name, String url) throws Exception {
+        if (useCloudEnv == true) {
+            if(cloudEnvName.equalsIgnoreCase("Browserstack")) {
+                get_Cloud_Driver(cloudEnvName, browserstack_username, browserstack_accesskey, OS, OS_Version, Browser_Name, Browser_Version);
+            } else if (cloudEnvName.equalsIgnoreCase("Saucelabs")) {
+                get_Cloud_Driver(cloudEnvName, saucelabs_username, saucelabs_accesskey, OS, OS_Version, Browser_Name, Browser_Version);
+            }
+        } else{
+            get_Local_Driver(Browser_Name);
+            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+            driver.navigate().to(url);
+            driver.manage().window().maximize();
+        }
     }
 
-    public WebDriver get_Local_Driver(String browser) {
+    public WebDriver get_Local_Driver(String Browser_Name) {
 
-        if(browser.equalsIgnoreCase("Firefox")) {
+        if(Browser_Name.equalsIgnoreCase("Firefox")) {
             System.setProperty("webdriver.gecko.driver", "../Generic/driver/geckodriver.exe");
             driver = new FirefoxDriver();
-        } else if (browser.equalsIgnoreCase("Chrome")) {
+        } else if (Browser_Name.equalsIgnoreCase("Chrome")) {
             System.setProperty("webdriver.chrome.driver", "../Generic/driver/chromedriver.exe");
             driver = new ChromeDriver();
-        } else if (browser.equalsIgnoreCase("IE")) {
+        } else if (Browser_Name.equalsIgnoreCase("IE")) {
             System.setProperty("webdriver.IE.driver", "../Generic/driver/IEDriverServer.exe");
             driver = new InternetExplorerDriver();
-        } else if (browser.equalsIgnoreCase("Opera")) {
+        } else if (Browser_Name.equalsIgnoreCase("Opera")) {
             System.setProperty("webdriver.opera.driver", "../Generic/driver/operadriver.exe");
             driver = new OperaDriver();
         } else {
