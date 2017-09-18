@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Twitter]" parallel="tests">
+  <test name="TwitterFeatures(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://twitter.com/"/>
+    <classes>
+      <class name="TestHome.Searching_Test">
+        <methods>
+          <include name="Searching"/>
+          <include name="close_Browser"/>
+          <include name="launch_Browser_Open_Application"/>
+        </methods>
+      </class> <!-- TestHome.Searching_Test -->
+      <class name="TestHome.TestLogin_TestLogOut">
+        <methods>
+          <include name="Testing_login"/>
+          <include name="close_Browser"/>
+          <include name="launch_Browser_Open_Application"/>
+        </methods>
+      </class> <!-- TestHome.TestLogin_TestLogOut -->
+      <class name="TestHome.Test_Twitter_Inside">
+        <methods>
+          <include name="Testing_login"/>
+          <include name="close_Browser"/>
+          <include name="launch_Browser_Open_Application"/>
+        </methods>
+      </class> <!-- TestHome.Test_Twitter_Inside -->
+    </classes>
+  </test> <!-- TwitterFeatures(failed) -->
+</suite> <!-- Failed suite [Twitter] -->

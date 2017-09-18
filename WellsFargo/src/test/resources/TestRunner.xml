@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="WellsFargo" parallel="tests">
+
+    <test name="WellsFargoFeatures">
+
+        <parameter name="browser" value="chrome"/>
+        <parameter name="url" value="https://www.wellsfargo.com/"/>
+
+        <classes>
+            <!--<class name="TestCase.sBusiness"></class>-->
+            <class name="TestCase.TestWellsFago"></class>
+            <!--<class name="TestCase.Test_banking"></class>-->
+            <!--<class name="TestCase.Test_Commercial"></class>-->
+            <!--<class name="TestCase.Customer_Account_Catagory"></class>-->
+            <!--<class name="TestCase.Test_Financial_Education_Features"></class>-->
+            <!--<class name="TestCase.Credit_Features_Loans"></class>-->
+            </classes>
+    </test>
+</suite>
