@@ -53,6 +53,7 @@ public class DataReader {
         for(int i = 1; i < data.length; i++) {
             XSSFRow rows = sheet.getRow(i);
             for(int j = 0; j < numberOfCol; j++) {
+                XSSFCell cell = rows.getCell(j);
                 String cellData = getCellValue(cell);
                 data[i] = cellData;
             }
