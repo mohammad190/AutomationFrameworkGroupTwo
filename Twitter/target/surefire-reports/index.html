@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">10 methods, 3 failed,   7 passed</span>
+                    <span class="method-stats">10 methods, 2 failed,   8 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,17 +102,12 @@
                     <div class="method-list-content failed suite-Twitter">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Twitter" title="TestHome.Searching_Test" hash-for-method="Searching">Searching</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Twitter" title="TestHome.Test_Twitter_Inside" hash-for-method="Testing_login">Testing_login</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Twitter" title="TestHome.TestLogin_TestLogOut" hash-for-method="Testing_login">Testing_login</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Twitter" title="TestHome.Test_Twitter_Inside" hash-for-method="Testing_login">Testing_login</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Twitter -->
@@ -127,6 +122,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Twitter" title="TestHome.Test_New_Twitter_Account" hash-for-method="Create_New_Twitter_Account">Create_New_Twitter_Account</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Twitter" title="TestHome.Searching_Test" hash-for-method="Searching">Searching</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -174,15 +174,15 @@
           <div class="suite-Twitter-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">TestHome.Searching_Test</span>
+              <span class="class-name">TestHome.Test_Twitter_Inside</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Searching">
-                  </a> <!-- Searching -->
-                  <span class="method-name">Searching</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;.//*[@id=&apos;doc&apos;]/div[1]/div/div[2]/div/div[1]&quot;}
+                  <a name="Testing_login">
+                  </a> <!-- Testing_login -->
+                  <span class="method-name">Testing_login</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;tweet-box-home-timeline&quot;}
   (Session info: chrome=60.0.3112.113)
   (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
@@ -190,9 +190,9 @@ For documentation on this error, please visit: http://seleniumhq.org/exceptions/
 Build info: version: &apos;3.5.3&apos;, revision: &apos;a88d25fe6b&apos;, time: &apos;2017-08-29T12:42:44.417Z&apos;
 System info: host: &apos;LAPTOP-FFQ1AJ6B&apos;, ip: &apos;192.168.184.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_131&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, platformName=XP, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a), userDataDir=C:\Users\sujon\AppData\Local\Temp\scoped_dir13336_249}, takesHeapSnapshot=true, pageLoadStrategy=normal, unhandledPromptBehavior=, databaseEnabled=false, handlesAlerts=true, version=60.0.3112.113, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
-Session ID: e65fe3d51c1009a1b862920f6ddc6efc
-*** Element info: {Using=xpath, value=.//*[@id=&apos;doc&apos;]/div[1]/div/div[2]/div/div[1]}
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, platformName=XP, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a), userDataDir=C:\Users\sujon\AppData\Local\Temp\scoped_dir12116_20228}, takesHeapSnapshot=true, pageLoadStrategy=normal, unhandledPromptBehavior=, databaseEnabled=false, handlesAlerts=true, version=60.0.3112.113, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: e2f9be02035c5bff48b9aad8ae962c1c
+*** Element info: {Using=id, value=tweet-box-home-timeline}
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
 	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
@@ -202,14 +202,14 @@ Session ID: e65fe3d51c1009a1b862920f6ddc6efc
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:416)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:518)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:462)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:408)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy8.click(Unknown Source)
-	at Twitter_Features.Search_Option.Searching(Search_Option.java:18)
-	at TestHome.Searching_Test.Searching(Searching_Test.java:13)
+	at com.sun.proxy.$Proxy8.sendKeys(Unknown Source)
+	at Twitter_Features.Inside_Twitter_features.Twitter_Home_Page(Inside_Twitter_features.java:41)
+	at TestHome.Test_Twitter_Inside.Testing_login(Test_Twitter_Inside.java:15)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
@@ -239,8 +239,8 @@ For documentation on this error, please visit: http://seleniumhq.org/exceptions/
 Build info: version: &apos;3.5.3&apos;, revision: &apos;a88d25fe6b&apos;, time: &apos;2017-08-29T12:42:44.417Z&apos;
 System info: host: &apos;LAPTOP-FFQ1AJ6B&apos;, ip: &apos;192.168.184.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_131&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, platformName=XP, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a), userDataDir=C:\Users\sujon\AppData\Local\Temp\scoped_dir192_10702}, takesHeapSnapshot=true, pageLoadStrategy=normal, unhandledPromptBehavior=, databaseEnabled=false, handlesAlerts=true, version=60.0.3112.113, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 19e969966aad04ae8c4c1e347547fcfa
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, platformName=XP, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a), userDataDir=C:\Users\sujon\AppData\Local\Temp\scoped_dir8200_3680}, takesHeapSnapshot=true, pageLoadStrategy=normal, unhandledPromptBehavior=, databaseEnabled=false, handlesAlerts=true, version=60.0.3112.113, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: a61f7a8bc32f55c8e9e54254d7e06bee
 *** Element info: {Using=id, value=user-dropdown-toggle}
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
@@ -269,70 +269,6 @@ Session ID: 19e969966aad04ae8c4c1e347547fcfa
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Twitter-class-failed -->
-          <div class="suite-Twitter-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">TestHome.Test_Twitter_Inside</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="Testing_login">
-                  </a> <!-- Testing_login -->
-                  <span class="method-name">Testing_login</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;tweet-box-home-timeline&quot;}
-  (Session info: chrome=60.0.3112.113)
-  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.5.3&apos;, revision: &apos;a88d25fe6b&apos;, time: &apos;2017-08-29T12:42:44.417Z&apos;
-System info: host: &apos;LAPTOP-FFQ1AJ6B&apos;, ip: &apos;192.168.184.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_131&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, platformName=XP, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a), userDataDir=C:\Users\sujon\AppData\Local\Temp\scoped_dir12428_26407}, takesHeapSnapshot=true, pageLoadStrategy=normal, unhandledPromptBehavior=, databaseEnabled=false, handlesAlerts=true, version=60.0.3112.113, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 631da75206a1085eca442ac5a76b22c4
-*** Element info: {Using=id, value=tweet-box-home-timeline}
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:416)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:462)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:408)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy8.sendKeys(Unknown Source)
-	at Twitter_Features.Inside_Twitter_features.Twitter_Home_Page(Inside_Twitter_features.java:41)
-	at TestHome.Test_Twitter_Inside.Testing_login(Test_Twitter_Inside.java:15)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:748)
-... Removed 20 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Twitter-class-failed -->
-          <div class="suite-Twitter-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">TestHome.Test_New_Twitter_Account</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="Create_New_Twitter_Account">
-                  </a> <!-- Create_New_Twitter_Account -->
-                  <span class="method-name">Create_New_Twitter_Account</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Twitter-class-passed -->
           <div class="suite-Twitter-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -379,6 +315,36 @@ Session ID: 631da75206a1085eca442ac5a76b22c4
                   <a name="TwitterHomePage6">
                   </a> <!-- TwitterHomePage6 -->
                   <span class="method-name">TwitterHomePage6</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Twitter-class-passed -->
+          <div class="suite-Twitter-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">TestHome.Test_New_Twitter_Account</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Create_New_Twitter_Account">
+                  </a> <!-- Create_New_Twitter_Account -->
+                  <span class="method-name">Create_New_Twitter_Account</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Twitter-class-passed -->
+          <div class="suite-Twitter-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">TestHome.Searching_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Searching">
+                  </a> <!-- Searching -->
+                  <span class="method-name">Searching</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -445,43 +411,43 @@ data.addRows(10);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'Create_New_Twitter_Account')
 data.setCell(0, 2, 'TestHome.Test_New_Twitter_Account')
-data.setCell(0, 3, 25907);
+data.setCell(0, 3, 26365);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'Testing_login')
-data.setCell(1, 2, 'TestHome.Test_Twitter_Inside')
-data.setCell(1, 3, 6955);
+data.setCell(1, 2, 'TestHome.TestLogin_TestLogOut')
+data.setCell(1, 3, 7148);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'Testing_login')
-data.setCell(2, 2, 'TestHome.TestLogin_TestLogOut')
-data.setCell(2, 3, 6849);
+data.setCell(2, 2, 'TestHome.Test_Twitter_Inside')
+data.setCell(2, 3, 6637);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'Searching')
 data.setCell(3, 2, 'TestHome.Searching_Test')
-data.setCell(3, 3, 5289);
+data.setCell(3, 3, 3401);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'TwitterHomePage1')
+data.setCell(4, 1, 'TwitterHomePage2')
 data.setCell(4, 2, 'TestHome.TestHomePage')
-data.setCell(4, 3, 3410);
+data.setCell(4, 3, 3205);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'TwitterHomePage5')
+data.setCell(5, 1, 'TwitterHomePage3')
 data.setCell(5, 2, 'TestHome.TestHomePage')
-data.setCell(5, 3, 3385);
+data.setCell(5, 3, 3195);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'TwitterHomePage6')
+data.setCell(6, 1, 'TwitterHomePage5')
 data.setCell(6, 2, 'TestHome.TestHomePage')
-data.setCell(6, 3, 3208);
+data.setCell(6, 3, 3195);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'TwitterHomePage3')
+data.setCell(7, 1, 'TwitterHomePage4')
 data.setCell(7, 2, 'TestHome.TestHomePage')
-data.setCell(7, 3, 3194);
+data.setCell(7, 3, 3185);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'TwitterHomePage2')
+data.setCell(8, 1, 'TwitterHomePage6')
 data.setCell(8, 2, 'TestHome.TestHomePage')
-data.setCell(8, 3, 3188);
+data.setCell(8, 3, 3184);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'TwitterHomePage4')
+data.setCell(9, 1, 'TwitterHomePage1')
 data.setCell(9, 2, 'TestHome.TestHomePage')
-data.setCell(9, 3, 3176);
+data.setCell(9, 3, 3182);
 window.suiteTableData['Twitter']= { tableData: data, tableDiv: 'times-div-Twitter'}
 return data;
 }
@@ -521,135 +487,133 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">Testing_login</span>
-                <span class="method-start">12513 ms</span>
+                <span class="method-start">21184 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close_Browser</span>
-                <span class="method-start">19460 ms</span>
+                <span class="method-start">28367 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">TestHome.TestHomePage</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">launch_Browser_Open_Application(chrome, https://twitter.com/)</span>
-                <span class="method-start">20394 ms</span>
+                <span class="method-start">29247 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">TwitterHomePage1</span>
-                <span class="method-start">29776 ms</span>
+                <span class="method-start">46252 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close_Browser</span>
-                <span class="method-start">33186 ms</span>
+                <span class="method-start">49434 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launch_Browser_Open_Application(chrome, https://twitter.com/)</span>
-                <span class="method-start">34174 ms</span>
+                <span class="method-start">50388 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">TwitterHomePage2</span>
-                <span class="method-start">43213 ms</span>
+                <span class="method-start">61519 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close_Browser</span>
-                <span class="method-start">46401 ms</span>
+                <span class="method-start">64724 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launch_Browser_Open_Application(chrome, https://twitter.com/)</span>
-                <span class="method-start">47365 ms</span>
+                <span class="method-start">65758 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">TwitterHomePage3</span>
-                <span class="method-start">57216 ms</span>
+                <span class="method-start">78154 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close_Browser</span>
-                <span class="method-start">60410 ms</span>
+                <span class="method-start">81349 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launch_Browser_Open_Application(chrome, https://twitter.com/)</span>
-                <span class="method-start">61379 ms</span>
+                <span class="method-start">82272 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">TwitterHomePage4</span>
-                <span class="method-start">70787 ms</span>
+                <span class="method-start">95009 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close_Browser</span>
-                <span class="method-start">73963 ms</span>
+                <span class="method-start">98194 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launch_Browser_Open_Application(chrome, https://twitter.com/)</span>
-                <span class="method-start">74896 ms</span>
+                <span class="method-start">99109 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">TwitterHomePage5</span>
-                <span class="method-start">88173 ms</span>
+                <span class="method-start">113614 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close_Browser</span>
-                <span class="method-start">91558 ms</span>
+                <span class="method-start">116809 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launch_Browser_Open_Application(chrome, https://twitter.com/)</span>
-                <span class="method-start">92520 ms</span>
+                <span class="method-start">117882 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">TwitterHomePage6</span>
-                <span class="method-start">110368 ms</span>
+                <span class="method-start">133344 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close_Browser</span>
-                <span class="method-start">113576 ms</span>
+                <span class="method-start">136528 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">TestHome.Searching_Test</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">launch_Browser_Open_Application(chrome, https://twitter.com/)</span>
-                <span class="method-start">114471 ms</span>
+                <span class="method-start">137463 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">Searching</span>
-                <span class="method-start">121659 ms</span>
+                <span class="method-start">152672 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close_Browser</span>
-                <span class="method-start">126951 ms</span>
+                <span class="method-start">156073 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">TestHome.Test_New_Twitter_Account</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">launch_Browser_Open_Application(chrome, https://twitter.com/)</span>
-                <span class="method-start">127772 ms</span>
+                <span class="method-start">157044 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Create_New_Twitter_Account</span>
-                <span class="method-start">136537 ms</span>
+                <span class="method-start">169931 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close_Browser</span>
-                <span class="method-start">162444 ms</span>
+                <span class="method-start">196296 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">TestHome.Test_Twitter_Inside</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">launch_Browser_Open_Application(chrome, https://twitter.com/)</span>
-                <span class="method-start">163628 ms</span>
+                <span class="method-start">197300 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">Testing_login</span>
-                <span class="method-start">172087 ms</span>
+                <span class="method-start">210023 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close_Browser</span>
-                <span class="method-start">179044 ms</span>
+                <span class="method-start">216663 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
