@@ -51,9 +51,9 @@ public class AutoLoans extends CommonAPI {
         Loan_Amount_Box.sendKeys(LoanAmount);
 
         for(WebElement els : elements) {
-            Loan_Type_Drop_Down.click();
-            els.click();
-            Calculate_Button.click();
+                Loan_Type_Drop_Down.click();
+                els.click();
+                Calculate_Button.click();
         }
 
     }

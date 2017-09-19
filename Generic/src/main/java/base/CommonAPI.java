@@ -35,8 +35,8 @@ public class CommonAPI {
 
     @Parameters({"browser","url"})
     @BeforeMethod
-    public void setUp(boolean useCloudEnv, String cloudEnvName, String OS, String OS_Version,
-                      String Browser_Version, String browser, String url) throws Exception {
+    public void setUp(@Optional boolean useCloudEnv,@Optional String cloudEnvName,@Optional String OS,@Optional String OS_Version,
+                      @Optional String Browser_Version, String browser, String url) throws Exception {
         if (useCloudEnv == true) {
             if(cloudEnvName.equalsIgnoreCase("Browserstack")) {
                 get_Cloud_Driver(cloudEnvName, browserstack_username, browserstack_accesskey, OS, OS_Version, browser, Browser_Version);
