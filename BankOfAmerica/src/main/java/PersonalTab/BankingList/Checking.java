@@ -60,7 +60,7 @@ public class Checking extends CommonAPI {
         Compare_Accounts();
         waitUntilClickable(Core_Checking_Account_Button);
         Core_Checking_Account_Button.click();
-        If_Statement_Check_Box(RegularRewardsOrchecking);;
+        If_Statement_Check_Box(RegularRewardsOrchecking);
     }
 
     public void Interest_Checking(String RegularRewardsOrchecking) {
