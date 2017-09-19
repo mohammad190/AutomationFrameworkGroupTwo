@@ -14,8 +14,8 @@
             <!--<class name="TestCase.Test_Commercial"></class>-->
             <!--<class name="TestCase.Customer_Account_Catagory"></class>-->
             <!--<class name="TestCase.Test_Financial_Education_Features"></class>-->
-            <class name="TestCase.Credit_Features_Loans"></class>
-            <!--<class name="TestCase.Test_SiteMap"></class>-->
+            <!--<class name="TestCase.Credit_Features_Loans"></class>-->
+            <class name="TestCase.Test_SiteMap"></class>
             </classes>
     </test>
 </suite>
