@@ -25,15 +25,15 @@ public class CommonAPI {
 
     public static WebDriver driver;
 
-    private static XSSFWorkbook workbook;
-    private static XSSFSheet sheet;
+    // private static XSSFWorkbook workbook;
+    // private static XSSFSheet sheet;
 
     private String saucelabs_username = "";
     private String saucelabs_accesskey = "";
     private String browserstack_username = "";
     private String browserstack_accesskey = "";
 
-    @Parameters({"browser","url"})
+    @Parameters({"useCloudEnv", "cloudEnvName", "OS", "OS_Version", "Browser_Version", "browser","url"})
     @BeforeMethod
     public void setUp(@Optional boolean useCloudEnv,@Optional String cloudEnvName,@Optional String OS,@Optional String OS_Version,
                       @Optional String Browser_Version, String browser, String url) throws Exception {
@@ -145,6 +145,7 @@ public class CommonAPI {
         boolean element = wait.until(ExpectedConditions.elementToBeSelected(locator));
     }
 
+    /*
     public static void setExcelFile(String path, String sheetName) throws IOException {
         FileInputStream excelFile = new FileInputStream(path);
         workbook = new XSSFWorkbook(excelFile);
@@ -226,4 +227,5 @@ public class CommonAPI {
     public void tearDown() {
         driver.quit();
     }
+    */
 }
