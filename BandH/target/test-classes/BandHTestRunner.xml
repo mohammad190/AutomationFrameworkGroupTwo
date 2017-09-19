@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "BandH Automation" parallel="tests">
+
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="url" value="https://www.bhphotovideo.com"/>
+
+    <test name="BandH Automation Test">
+        <classes>
+        <class name="BHTest.BHTest"/>
+            <class name="BHTest.Login_Test"/>
+        </classes>
+    </test>
+
+</suite>
