@@ -4,7 +4,12 @@
 
     <test name="WellsFargoFeatures">
 
-        <parameter name="browser" value="chrome"/>
+        <parameter name="useCloudEnv" value="false"/>
+        <parameter name="cloudEnvName" value="browserstack"/>
+        <parameter name="OS" value="Win"/>
+        <parameter name="OS_Version" value=""/>
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="Browser_Version" value="53.0"/>
         <parameter name="url" value="https://www.wellsfargo.com/"/>
 
         <classes>
@@ -14,8 +19,8 @@
             <!--<class name="TestCase.Test_Commercial"></class>-->
             <!--<class name="TestCase.Customer_Account_Catagory"></class>-->
             <!--<class name="TestCase.Test_Financial_Education_Features"></class>-->
-            <!--<class name="TestCase.Credit_Features_Loans"></class>-->
-            <class name="TestCase.Test_SiteMap"></class>
+            <class name="TestCase.Credit_Features_Loans"></class>
+            <!--<class name="TestCase.Test_SiteMap"></class>-->
             </classes>
     </test>
 </suite>
