@@ -25,8 +25,8 @@ public class CommonAPI {
 
     public static WebDriver driver;
 
-    // private static XSSFWorkbook workbook;
-    // private static XSSFSheet sheet;
+    private static XSSFWorkbook workbook;
+    private static XSSFSheet sheet;
 
     private String saucelabs_username = "";
     private String saucelabs_accesskey = "";
@@ -145,7 +145,6 @@ public class CommonAPI {
         boolean element = wait.until(ExpectedConditions.elementToBeSelected(locator));
     }
 
-    /*
     public static void setExcelFile(String path, String sheetName) throws IOException {
         FileInputStream excelFile = new FileInputStream(path);
         workbook = new XSSFWorkbook(excelFile);
@@ -215,6 +214,7 @@ public class CommonAPI {
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.navigate().to(url);
         driver.manage().window().maximize();
+        setExcelFile(File_Path, sheetName);
     }
 
     @DataProvider(name = "loginData")
@@ -227,5 +227,4 @@ public class CommonAPI {
     public void tearDown() {
         driver.quit();
     }
-    */
 }
