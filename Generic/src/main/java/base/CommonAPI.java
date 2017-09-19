@@ -193,7 +193,7 @@ public class CommonAPI {
 
     @Parameters({"browser", "url", "File_Path", "sheetName"})
     @BeforeClass
-    public void setUpExcel(String browser, String url, String File_Path, String sheetName) throws IOException {
+    public void setUpExcel(String browser, String url, @Optional String File_Path, @Optional String sheetName) throws IOException {
         if(browser.equalsIgnoreCase("Firefox")) {
             System.setProperty("webdriver.gecko.driver", "../Generic/driver/geckodriver.exe");
             driver = new FirefoxDriver();
