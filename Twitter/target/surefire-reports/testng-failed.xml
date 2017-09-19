@@ -5,20 +5,6 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="https://twitter.com/"/>
     <classes>
-      <class name="TestHome.Searching_Test">
-        <methods>
-          <include name="Searching"/>
-          <include name="close_Browser"/>
-          <include name="launch_Browser_Open_Application"/>
-        </methods>
-      </class> <!-- TestHome.Searching_Test -->
-      <class name="TestHome.TestLogin_TestLogOut">
-        <methods>
-          <include name="Testing_login"/>
-          <include name="close_Browser"/>
-          <include name="launch_Browser_Open_Application"/>
-        </methods>
-      </class> <!-- TestHome.TestLogin_TestLogOut -->
       <class name="TestHome.Test_Twitter_Inside">
         <methods>
           <include name="Testing_login"/>
@@ -26,6 +12,13 @@
           <include name="launch_Browser_Open_Application"/>
         </methods>
       </class> <!-- TestHome.Test_Twitter_Inside -->
+      <class name="TestHome.TestLogin_TestLogOut">
+        <methods>
+          <include name="Testing_login"/>
+          <include name="close_Browser"/>
+          <include name="launch_Browser_Open_Application"/>
+        </methods>
+      </class> <!-- TestHome.TestLogin_TestLogOut -->
     </classes>
   </test> <!-- TwitterFeatures(failed) -->
 </suite> <!-- Failed suite [Twitter] -->
