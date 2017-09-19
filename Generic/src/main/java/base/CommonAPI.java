@@ -25,17 +25,17 @@ public class CommonAPI {
 
     public static WebDriver driver;
 
-    private static XSSFWorkbook workbook;
-    private static XSSFSheet sheet;
+    // private static XSSFWorkbook workbook;
+    // private static XSSFSheet sheet;
 
     private String saucelabs_username = "";
     private String saucelabs_accesskey = "";
     private String browserstack_username = "";
     private String browserstack_accesskey = "";
 
-    @Parameters({"browser","url"})
+    @Parameters({"useCloudEnv","cloudEnvName", "OS", "OS_Version", "Browser_Version", "browser", "url"})
     @BeforeMethod
-    public void setUp(@Optional boolean useCloudEnv,@Optional String cloudEnvName,@Optional String OS,@Optional String OS_Version,
+    public void setUp(@Optional boolean useCloudEnv, @Optional String cloudEnvName, @Optional String OS, @Optional String OS_Version,
                       @Optional String Browser_Version, String browser, String url) throws Exception {
         if (useCloudEnv == true) {
             if(cloudEnvName.equalsIgnoreCase("Browserstack")) {
@@ -43,7 +43,7 @@ public class CommonAPI {
             } else if (cloudEnvName.equalsIgnoreCase("Saucelabs")) {
                 get_Cloud_Driver(cloudEnvName, saucelabs_username, saucelabs_accesskey, OS, OS_Version, browser, Browser_Version);
             }
-        } else{
+        } else {
             get_Local_Driver(browser);
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
@@ -145,6 +145,7 @@ public class CommonAPI {
         boolean element = wait.until(ExpectedConditions.elementToBeSelected(locator));
     }
 
+    /*
     public static void setExcelFile(String path, String sheetName) throws IOException {
         FileInputStream excelFile = new FileInputStream(path);
         workbook = new XSSFWorkbook(excelFile);
@@ -193,7 +194,7 @@ public class CommonAPI {
 
     @Parameters({"browser", "url", "File_Path", "sheetName"})
     @BeforeClass
-    public void setUpExcel(String browser, String url, @Optional String File_Path, @Optional String sheetName) throws IOException {
+    public void setUpExcel(@Optional String browser, @Optional String url, @Optional String File_Path, @Optional String sheetName) throws IOException {
         if(browser.equalsIgnoreCase("Firefox")) {
             System.setProperty("webdriver.gecko.driver", "../Generic/driver/geckodriver.exe");
             driver = new FirefoxDriver();
@@ -226,4 +227,5 @@ public class CommonAPI {
     public void tearDown() {
         driver.quit();
     }
+    */
 }
