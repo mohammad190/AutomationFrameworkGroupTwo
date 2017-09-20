@@ -19,10 +19,12 @@
             <!--<class name="TestCase.Test_Commercial"></class>-->
             <!--<class name="TestCase.Customer_Account_Catagory"></class>-->
             <!--<class name="TestCase.Test_Financial_Education_Features"></class>-->
-            <class name="TestCase.Credit_Features_Loans"></class>
+            <!--<class name="TestCase.Credit_Features_Loans"></class>-->
             <!--<class name="TestCase.Test_SiteMap"></class>-->
             <!--<class name="TestCase.Test_Youtube"></class>-->
             <!--<class name="TestCase.Test_Bank_Twitter"></class>-->
+            <class name="Insurance_Package.Test_insurance_features"></class>
+
             </classes>
     </test>
 </suite>
