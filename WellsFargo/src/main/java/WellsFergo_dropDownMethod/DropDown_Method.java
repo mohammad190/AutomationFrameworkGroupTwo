@@ -26,6 +26,7 @@ public class DropDown_Method extends CommonAPI {
         Thread.sleep(2000);
         select.selectByValue("MessageAlerts") ;
         Thread.sleep(2000);
+        System.out.println("This all test is passed");
 
     }
 }

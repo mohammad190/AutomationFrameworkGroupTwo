@@ -22,10 +22,10 @@ public class Features_Vision_values  extends CommonAPI {
     @FindBy(how = How.LINK_TEXT, using = "Our Culture")
     public static WebElement Go_OurCulture_5;
 
-    @FindBy(how = How.LINK_TEXT, using = "Who We Are")
-    public static WebElement Go_WoWeAre_6;
+//    @FindBy(how = How.LINK_TEXT, using = "Who We Are")
+//    public static WebElement Go_WoWeAre_6;
 
-    @FindBy(how = How.LINK_TEXT, using = "Our Strategy")
+    @FindBy(how = How.XPATH, using = ".//a[@href='javascript:;']")
     public static WebElement Go_OurStarategy_7;
 
     @FindBy(how = How.LINK_TEXT, using = "Our Goals")
@@ -46,8 +46,8 @@ public class Features_Vision_values  extends CommonAPI {
         Thread.sleep(2000);
         Go_OurCulture_5.click();
         Thread.sleep(2000);
-        Go_WoWeAre_6.click();
-        Thread.sleep(2000);
+//        Go_WoWeAre_6.click();
+//        Thread.sleep(2000);
         Go_OurStarategy_7.click();
         Thread.sleep(2000);
         Go_OurGoals_8.click();
