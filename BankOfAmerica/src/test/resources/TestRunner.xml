@@ -12,9 +12,9 @@
 
     <test name="BankOfAmerica Automation">
         <classes>
-            <!-- <class name="home.TestingBankingFunctionalities"/> -->
+             <class name="home.TestingBankingFunctionalities"/>
             <!-- <class name="home.TestingCreditCardsFunctionalities"/> -->
-            <class name="home.TestingLoanFunctionalities"/>
+            <!--<class name="home.TestingLoanFunctionalities"/>-->
         </classes>
     </test>
 
