@@ -2,14 +2,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name = "WordPress Automation" parallel="tests">
 
+    <parameter name="useCloudEnv" value="false"/>
+    <parameter name="cloudEnvName" value="browserstack"/>
+    <parameter name="OS" value="Win"/>
+    <parameter name="OS_Version" value=""/>
     <parameter name="browser" value="Chrome"/>
-    <parameter name="url" value="http://demosite.center/wordpress/wp-login.php"/>
-    <parameter name="File_Path" value="C:\Users\Local Account\IdeaProjects\PNTAutomationGroupTwo\WordPressTesting\src\main\java\excelFiles\LoginCredentials.xlsx"/>
-    <parameter name="sheetName" value="Logintest"/>
+    <parameter name="Browser_Version" value="53.0"/>
+    <parameter name="url" value="https://www.amazon.com/"/>
 
-    <test name="BankOfAmerica Automation">
+    <test name="Wordpress">
+
         <classes>
-            <class name="home.TestWordPressLogin"/>
+            <class name= "home.TestWordPressLogin"/>
         </classes>
     </test>
 

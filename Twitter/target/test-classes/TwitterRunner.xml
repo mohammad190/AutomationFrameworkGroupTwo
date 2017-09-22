@@ -2,14 +2,21 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Twitter" parallel="tests">
     <test name="TwitterFeatures">
-        <parameter name="browser" value="chrome"/>
+        <parameter name="useCloudEnv" value="false"/>
+        <parameter name="cloudEnvName" value="browserstack"/>
+        <parameter name="OS" value="Win"/>
+        <parameter name="OS_Version" value=""/>
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="Browser_Version" value="53.0"/>
         <parameter name="url" value="https://twitter.com/"/>
+
         <classes>
-            <class name="TestHome.TestLogin_TestLogOut"></class>
-            <class name="TestHome.TestHomePage"></class>
-            <class name="TestHome.Searching_Test"></class>
-            <class name="TestHome.Test_New_Twitter_Account"></class>
-            <class name="TestHome.Test_Twitter_Inside"></class>
+            <!--<class name="TestHome.TestLogin_TestLogOut"></class>-->
+            <!--<class name="TestHome.TestHomePage"></class>-->
+            <!--<class name="TestHome.Searching_Test"></class>-->
+            <!--<class name="TestHome.Test_New_Twitter_Account"></class>-->
+            <!--<class name="TestHome.Test_Twitter_Inside"></class>-->
+            <class name="TestHome.Test_More_features"></class>
 
         </classes>
     </test>

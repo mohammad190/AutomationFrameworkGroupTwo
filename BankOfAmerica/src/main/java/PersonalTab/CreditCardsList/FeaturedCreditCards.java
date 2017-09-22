@@ -123,6 +123,21 @@ public class FeaturedCreditCards extends CommonAPI {
            els.click();
            Thread.sleep(1000);
        }
+
+       /*
+       boolean isChecked = false;
+        List<WebElement> radioButtons = driver.findElements(By.xpath("//input[contains(@type,'radio') and contains(@name,'cars')]"));
+        int size = radioButtons.size();
+
+        for(int i = 0; i < size; i++) {
+            isChecked = radioButtons.get(i).isSelected();
+
+            if(!isChecked) {
+                radioButtons.get(i).click();
+                Thread.sleep(2000);
+            }
+        }
+        */
     }
 
     public void Filter_Cards_Choose_Options(String AnnualFee, String BalanceTransfers, String ForeignTransaction, String APRPurchases, String PrefRewards, String CardType) throws InterruptedException {

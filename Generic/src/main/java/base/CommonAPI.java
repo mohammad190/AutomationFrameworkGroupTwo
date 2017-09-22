@@ -1,8 +1,8 @@
 package base;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFCell;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.LogStatus;
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
@@ -14,28 +14,93 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestContext;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
+import reporting.ExtentManager;
+import reporting.ExtentTestManager;
 
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
+import java.lang.reflect.Method;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class CommonAPI {
 
-    public static WebDriver driver;
 
-    // private static XSSFWorkbook workbook;
-    // private static XSSFSheet sheet;
+    /*
+    public static ExtentReports extent;
+
+    @BeforeSuite
+    public void extentSetup(ITestContext context) {
+        ExtentManager.setOutputDirectory(context);
+        extent = ExtentManager.getInstance();
+    }
+
+    @BeforeMethod
+    public void startExtent(Method method) {
+        String className = method.getDeclaringClass().getSimpleName();
+        String methodName = method.getName().toLowerCase();
+        ExtentTestManager.startTest(method.getName());
+        ExtentTestManager.getTest().assignCategory(className);
+    }
+
+    protected String getStackTrace(Throwable t) {
+        StringWriter sw = new StringWriter();
+        PrintWriter pw = new PrintWriter(sw);
+        t.printStackTrace(pw);
+        return sw.toString();
+    }
+
+    @AfterMethod
+    public void afterEachTestMethod(ITestResult result) {
+        ExtentTestManager.getTest().getTest().setStartedTime(getTime(result.getStartMillis()));
+        ExtentTestManager.getTest().getTest().setEndedTime(getTime(result.getEndMillis()));
+
+        for(String group : result.getMethod().getGroups()) {
+            ExtentTestManager.getTest().assignCategory(group);
+        }
+
+        if(result.getStatus() == 1) {
+            ExtentTestManager.getTest().log(LogStatus.PASS, "Test Passed");
+        } else if (result.getStatus() == 2) {
+            ExtentTestManager.getTest().log(LogStatus.FAIL, getStackTrace(result.getThrowable()));
+        } else if (result.getStatus() == 3) {
+            ExtentTestManager.getTest().log(LogStatus.SKIP, "Test Skipped");
+        }
+        ExtentTestManager.endTest();
+        extent.flush();
+        if(result.getStatus() == ITestResult.FAILURE) {
+            captureScreenshot(driver, result.getName());
+        }
+    }
+
+    @AfterSuite
+    public void generateReport() {
+        extent.close();
+    }
+
+    private Date getTime(long millis) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(millis);
+        return calendar.getTime();
+    }
+    */
+
+    public static WebDriver driver;
 
     private String saucelabs_username = "";
     private String saucelabs_accesskey = "";
     private String browserstack_username = "";
     private String browserstack_accesskey = "";
 
-    @Parameters({"useCloudEnv","cloudEnvName", "OS", "OS_Version", "Browser_Version", "browser", "url"})
+    @Parameters({"useCloudEnv", "cloudEnvName", "OS", "OS_Version", "Browser_Version", "browser","url"})
     @BeforeMethod
-    public void setUp(@Optional boolean useCloudEnv, @Optional String cloudEnvName, @Optional String OS, @Optional String OS_Version,
+    public void setUp(@Optional boolean useCloudEnv,@Optional String cloudEnvName,@Optional String OS,@Optional String OS_Version,
                       @Optional String Browser_Version, String browser, String url) throws Exception {
         if (useCloudEnv == true) {
             if(cloudEnvName.equalsIgnoreCase("Browserstack")) {
@@ -43,7 +108,7 @@ public class CommonAPI {
             } else if (cloudEnvName.equalsIgnoreCase("Saucelabs")) {
                 get_Cloud_Driver(cloudEnvName, saucelabs_username, saucelabs_accesskey, OS, OS_Version, browser, Browser_Version);
             }
-        } else {
+        } else{
             get_Local_Driver(browser);
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
@@ -146,86 +211,24 @@ public class CommonAPI {
     }
 
     /*
-    public static void setExcelFile(String path, String sheetName) throws IOException {
-        FileInputStream excelFile = new FileInputStream(path);
-        workbook = new XSSFWorkbook(excelFile);
-        sheet = workbook.getSheet(sheetName);
-    }
+    public static void captureScreenshot(WebDriver driver, String screenshotName) {
 
-    public static String[][] getTestData(String tableName) {
-        String[][] testData = null;
+        DateFormat df = new SimpleDateFormat("(MM.dd.yyyy-HH:mma)");
+        Date date = new Date();
+        df.format(date);
 
-        XSSFCell[] boundaryCells = findCells(tableName);
-        XSSFCell startCell = boundaryCells[0];
-        XSSFCell endCell = boundaryCells[1];
-
-        int startRow = startCell.getRowIndex() + 1;
-        int endRow = endCell.getRowIndex() - 1;
-        int startColumn = startCell.getColumnIndex() + 1;
-        int endColumn = endCell.getColumnIndex() - 1;
-
-        testData = new String[endRow - startRow + 1][endColumn - startColumn + 1];
-
-        for(int i = startRow; i < endRow; i++) {
-            for(int j = startColumn; j < endColumn; j++) {
-                testData[i - startRow][j - startColumn] = sheet.getRow(i).getCell(j).getStringCellValue();
-            }
+        File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(file, new File(System.getProperty("user.dir")+"/screenshots/" + screenshotName + " " + df.format(date) + ".png"));
+            System.out.println("Screenshot Captured");
+        } catch (Exception e) {
+            System.out.println("Exception while taking screenshot " + e.getMessage());
         }
-        return testData;
     }
 
-    public static XSSFCell[] findCells(String tableName) {
-        String pos = "begin";
-        XSSFCell[] cells = new XSSFCell[2];
-        for(Row row : sheet) {
-            for(Cell cell : row) {
-                if(tableName.equals(cell.getStringCellValue())) {
-                    if(pos.equalsIgnoreCase("Begin")) {
-                        cells[0] = (XSSFCell) cell;
-                        pos = "end";
-                    } else {
-                        cells[1] = (XSSFCell) cell;
-                    }
-                }
-            }
-        }
-        return cells;
-    }
-
-    @Parameters({"browser", "url", "File_Path", "sheetName"})
-    @BeforeClass
-    public void setUpExcel(@Optional String browser, @Optional String url, @Optional String File_Path, @Optional String sheetName) throws IOException {
-        if(browser.equalsIgnoreCase("Firefox")) {
-            System.setProperty("webdriver.gecko.driver", "../Generic/driver/geckodriver.exe");
-            driver = new FirefoxDriver();
-        } else if (browser.equalsIgnoreCase("Chrome")) {
-            System.setProperty("webdriver.chrome.driver", "../Generic/driver/chromedriver.exe");
-            driver = new ChromeDriver();
-        } else if (browser.equalsIgnoreCase("IE")) {
-            System.setProperty("webdriver.IE.driver", "../Generic/driver/IEDriverServer.exe");
-            driver = new InternetExplorerDriver();
-        } else if (browser.equalsIgnoreCase("Opera")) {
-            System.setProperty("webdriver.opera.driver", "../Generic/driver/operadriver.exe");
-            driver = new OperaDriver();
-        } else {
-            System.err.println("ERROR: Choose from: Firefox/Chrome/IE/Opera.");
-        }
-
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        driver.navigate().to(url);
-        driver.manage().window().maximize();
-    }
-
-    @DataProvider(name = "loginData")
-    public Object[][] dataProvider(String tableName) {
-        Object[][] testData = getTestData("Invalid_Login");
-        return testData;
-    }
-
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
+    public void takeScreenShot() throws IOException {
+        File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(file, new File("screenShots.png"));
     }
     */
 }

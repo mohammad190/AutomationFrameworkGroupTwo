@@ -7,9 +7,9 @@ import testing.WordPressLogin;
 
 public class TestWordPressLogin extends CommonAPI {
 
-    @Test(dataProvider = "loginData")
-    public void TestLogin(String username, String password) throws InterruptedException {
+    @Test
+    public void TestLogin() throws Exception {
         WordPressLogin wordPressLogin = PageFactory.initElements(driver, WordPressLogin.class);
-        wordPressLogin.logIn(username, password);
+        wordPressLogin.getDataFromExcelFileAndSearch();
     }
 }
