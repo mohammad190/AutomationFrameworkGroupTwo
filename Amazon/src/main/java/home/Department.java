@@ -22,6 +22,7 @@ public class Department extends CommonAPI {
     @FindBy(how = How.XPATH, using = ".//div[1]/div[2]/div/div[2]/div[1]/div/a[1]")
     public static WebElement fireTvStick;
 
+
     @FindBy(how = How.ID, using = "twotabsearchtextbox")
     public static WebElement searchInput;
 
