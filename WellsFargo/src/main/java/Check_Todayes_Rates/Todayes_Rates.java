@@ -14,6 +14,9 @@ public class Todayes_Rates extends CommonAPI {
     @FindBy(how = How.XPATH, using = ".//div[@aria-controls='checkTodaysRates']")
     public static WebElement Go_Todayes_Rates;
 
+
+    //@FindBy(how = How.XPATH,using = "")
+
     @FindBy(how = How.ID, using = "check_rates_dropdown")
     public static WebElement Click_Todayes_Rates_Box;
 
