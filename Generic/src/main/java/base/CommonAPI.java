@@ -95,8 +95,8 @@ public class CommonAPI {
 
     private String saucelabs_username = "";
     private String saucelabs_accesskey = "";
-    private String browserstack_username = "";
-    private String browserstack_accesskey = "";
+    private String browserstack_username = "ibrahimkhan1";
+    private String browserstack_accesskey = "p3yyfzCAhLyz92aajAAK";
 
     @Parameters({"useCloudEnv", "cloudEnvName", "OS", "OS_Version", "Browser_Version", "browser","url"})
     @BeforeMethod
@@ -138,10 +138,10 @@ public class CommonAPI {
     }
 
     public WebDriver get_Cloud_Driver(String envName, String envUsername, String envAccessKey, String OS,
-                                      String OS_Version, String Browser_Name, String Browser_Version) throws Exception {
+                                      String OS_Version, String browser, String Browser_Version) throws Exception {
 
         DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setCapability("Browser", Browser_Name);
+        cap.setCapability("Browser", browser);
         cap.setCapability("Browser_Version", Browser_Version);
         cap.setCapability("OS", OS);
         cap.setCapability("OS_Version", OS_Version);
@@ -151,7 +151,7 @@ public class CommonAPI {
                     ("http://" + envUsername + ":" + envAccessKey + "@ondemand.saucelabs.com:80/wd/hub"), cap);
         } else if (envName.equalsIgnoreCase("Browserstack")) {
             driver = new RemoteWebDriver(new URL
-                    ("http://" + envUsername + ":" + envAccessKey + "@hub-cloud.browserstack.com/wd/hub"), cap);
+                    ("http://" + browserstack_username + ":" + browserstack_accesskey + "@hub-cloud.browserstack.com/wd/hub"), cap);
         }
         return driver;
     }

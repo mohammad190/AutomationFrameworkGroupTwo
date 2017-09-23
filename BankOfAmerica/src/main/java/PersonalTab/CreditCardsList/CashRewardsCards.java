@@ -64,7 +64,8 @@ public class CashRewardsCards extends CommonAPI {
             System.err.println("ERROR: Cannot Compare Two Same Cards. ");
         }
 
-        WaitForElement.waitForElement(Compare_Button).click();
+        waitUntilClickable(Compare_Button);
+        Compare_Button.click();
     }
 
     public void Compare_Two_Cards(String CardTypeOne, String CardTypeTwo) {

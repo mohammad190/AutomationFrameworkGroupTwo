@@ -2,10 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name = "BankOfAmerica Automation" parallel="tests">
 
-    <parameter name="useCloudEnv" value="false"/>
-    <parameter name="cloudEnvName" value="browserstack"/>
+    <parameter name="useCloudEnv" value="true"/>
+    <parameter name="cloudEnvName" value="Browserstack"/>
     <parameter name="OS" value="Win"/>
-    <parameter name="OS_Version" value=""/>
+    <parameter name="OS_Version" value="8"/>
     <parameter name="browser" value="Chrome"/>
     <parameter name="Browser_Version" value="53.0"/>
     <parameter name="url" value="https://www.bankofamerica.com/"/>

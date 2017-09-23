@@ -53,6 +53,7 @@ public class TestingBankingFunctionalities extends CommonAPI {
         onlineBanking.Forgot_Passcode_Cancel("", "", "");
     }
 
+    @Test
     public void Test_Mobile_Banking() throws InterruptedException {
         Banking banking = PageFactory.initElements(driver, Banking.class);
         MobileBanking mobileBanking = PageFactory.initElements(driver, MobileBanking.class);
