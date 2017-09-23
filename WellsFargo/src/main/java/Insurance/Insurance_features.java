@@ -31,7 +31,7 @@ public class Insurance_features extends CommonAPI {
     @FindBy(how = How.LINK_TEXT,using = "Umbrella Liability Insurance")
     public static WebElement click_UmberellaLibrty_Insurance;
 
-    public static void Insurance_features()throws InterruptedException{
+    public static void Insurance_features()throws InterruptedException {
 
         Actions action = new Actions(driver);
         WebElement element = click_Insurance_features;
@@ -58,18 +58,5 @@ public class Insurance_features extends CommonAPI {
         driver.navigate().back();
         //action.moveToElement(element).perform();
         Thread.sleep(3000);
-
-
-
-
-
-//
-//        Actions action = new Actions(driver);
-//        WebElement element = click_loans_Tab_1;
-//        action.moveToElement(element).perform();
-//
-//        click_Mortgage_Loan_2.click();
-//        driver.navigate().back();
-//        action.moveToElement(element).perform();
     }
 }

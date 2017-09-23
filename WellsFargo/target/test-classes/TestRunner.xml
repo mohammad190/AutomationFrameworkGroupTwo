@@ -8,7 +8,7 @@
         <parameter name="cloudEnvName" value="browserstack"/>
         <parameter name="OS" value="Win"/>
         <parameter name="OS_Version" value=""/>
-        <parameter name="browser" value="Chrome"/>
+        <parameter name="browser" value="chrome"/>
         <parameter name="Browser_Version" value="53.0"/>
         <parameter name="url" value="https://www.wellsfargo.com/"/>
 
@@ -27,10 +27,7 @@
             <!--<class name="TestCase.Test_Search_option"></class>-->
             <!--<class name="Test_Check_Box.Test_CHeckBox"></class>-->
             <!--<class name="Test_FAQ_s.Test_frequently_ask_question_Features"></class>-->
-            <!--<class name="Test_DropDown_Bank.Test_DropDown_Features"></class>-->
-
-           
-
+            <!--<class name="Test_DropDown_Bank.Test_DropDown_Features"></class>--
             </classes>
     </test>
 </suite>
