@@ -11,23 +11,24 @@
         <parameter name="browser" value="chrome"/>
         <parameter name="Browser_Version" value="53.0"/>
         <parameter name="url" value="https://www.wellsfargo.com/"/>
-
         <classes>
-            <!--<class name="TestCase.sBusiness"></class>-->
-            <!--<class name="TestCase.TestWellsFago"></class>-->
-            <!--<class name="TestCase.Test_banking"></class>-->
-            <!--<class name="TestCase.Test_Commercial"></class>-->
-            <!--<class name="TestCase.Customer_Account_Catagory"></class>-->
-            <!--<class name="TestCase.Test_Financial_Education_Features"></class>-->
-            <!--<class name="TestCase.Credit_Features_Loans"></class>-->
-            <!--<class name="TestCase.Test_SiteMap"></class>-->
-            <!--<class name="TestCase.Test_Youtube"></class>-->
-            <!--<class name="TestCase.Test_Bank_Twitter"></class>-->
-            <!--<class name="Insurance_Package.Test_insurance_features"></class>-->
-            <!--<class name="TestCase.Test_Search_option"></class>-->
-            <!--<class name="Test_Check_Box.Test_CHeckBox"></class>-->
-            <!--<class name="Test_FAQ_s.Test_frequently_ask_question_Features"></class>-->
-            <!--<class name="Test_DropDown_Bank.Test_DropDown_Features"></class>--
+            <class name="TestCase.sBusiness"></class>
+            <class name="TestCase.TestWellsFago"></class>
+            <class name="TestCase.Test_banking"></class>
+            <class name="TestCase.Test_Commercial"></class>
+            <class name="TestCase.Customer_Account_Catagory"></class>
+            <class name="TestCase.Test_Financial_Education_Features"></class>
+            <class name="TestCase.Credit_Features_Loans"></class>
+            <class name="TestCase.Test_SiteMap"></class>
+            <class name="TestCase.Test_Youtube"></class>
+            <class name="TestCase.Test_Bank_Twitter"></class>
+            <class name="Insurance_Package.Test_insurance_features"></class>
+            <class name="TestCase.Test_Search_option"></class>
+            <class name="Test_Check_Box.Test_CHeckBox"></class>
+            <class name="Test_FAQ_s.Test_frequently_ask_question_Features"></class>
+            <class name="Test_DropDown_Bank.Test_DropDown_Features"></class>
+            <class name="TestUserNameAndPassword.TestUserNameAndPasswordFeature"></class>
+            <class name="TestMovingFeatures.TestMovingHomePage"></class>
             </classes>
     </test>
 </suite>
