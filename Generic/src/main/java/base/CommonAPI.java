@@ -109,7 +109,7 @@ public class CommonAPI {
                 get_Cloud_Driver(cloudEnvName, saucelabs_username, saucelabs_accesskey, OS, OS_Version, browser, Browser_Version);
             }
         } else{
-            get_Local_Driver(browser);
+            get_Local_Driver(OS, browser);
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
             driver.navigate().to(url);
@@ -117,25 +117,38 @@ public class CommonAPI {
         }
     }
 
-    public WebDriver get_Local_Driver(String browser) {
+    public WebDriver get_Local_Driver(String OS, String browser) {
 
-        if(browser.equalsIgnoreCase("Firefox")) {
-            System.setProperty("webdriver.gecko.driver", "../Generic/driver/geckodriver.exe");
-            driver = new FirefoxDriver();
-        } else if (browser.equalsIgnoreCase("Chrome")) {
-            System.setProperty("webdriver.chrome.driver", "../Generic/driver/chromedriver.exe");
-            driver = new ChromeDriver();
-        } else if (browser.equalsIgnoreCase("IE")) {
-            System.setProperty("webdriver.IE.driver", "../Generic/driver/IEDriverServer.exe");
-            driver = new InternetExplorerDriver();
-        } else if (browser.equalsIgnoreCase("Opera")) {
-            System.setProperty("webdriver.opera.driver", "../Generic/driver/operadriver.exe");
-            driver = new OperaDriver();
-        } else {
-            System.err.println("ERROR: Choose from: Firefox/Chrome/IE/Opera.");
+        if (OS.equalsIgnoreCase("MacOS")) {
+            if (browser.equalsIgnoreCase("Firefox")) {
+                System.setProperty("webdriver.gecko.driver", "../Generic/macdriver/geckodriver");
+                driver = new FirefoxDriver();
+            } else if (browser.equalsIgnoreCase("Chrome")) {
+                System.setProperty("webdriver.chrome.driver", "../Generic/macdriver/chromedriver");
+                driver = new ChromeDriver();
+            } else {
+                System.err.println("ERROR: Choose from: Firefox/Chrome.");
+            }
+        } else if (OS.equalsIgnoreCase("Win")) {
+            if (browser.equalsIgnoreCase("Firefox")) {
+                System.setProperty("webdriver.gecko.driver", "../Generic/driver/geckodriver.exe");
+                driver = new FirefoxDriver();
+            } else if (browser.equalsIgnoreCase("Chrome")) {
+                System.setProperty("webdriver.chrome.driver", "../Generic/driver/chromedriver.exe");
+                driver = new ChromeDriver();
+            } else if (browser.equalsIgnoreCase("IE")) {
+                System.setProperty("webdriver.IE.driver", "../Generic/driver/IEDriverServer.exe");
+                driver = new InternetExplorerDriver();
+            } else if (browser.equalsIgnoreCase("Opera")) {
+                System.setProperty("webdriver.opera.driver", "../Generic/driver/operadriver.exe");
+                driver = new OperaDriver();
+            } else {
+                System.err.println("ERROR: Choose from: Firefox/Chrome/IE/Opera.");
+                }
+            }
+            return driver;
         }
-        return driver;
-    }
+
 
     public WebDriver get_Cloud_Driver(String envName, String envUsername, String envAccessKey, String OS,
                                       String OS_Version, String browser, String Browser_Version) throws Exception {
@@ -210,25 +223,10 @@ public class CommonAPI {
         boolean element = wait.until(ExpectedConditions.elementToBeSelected(locator));
     }
 
-    /*
-    public static void captureScreenshot(WebDriver driver, String screenshotName) {
-
-        DateFormat df = new SimpleDateFormat("(MM.dd.yyyy-HH:mma)");
-        Date date = new Date();
-        df.format(date);
-
-        File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(file, new File(System.getProperty("user.dir")+"/screenshots/" + screenshotName + " " + df.format(date) + ".png"));
-            System.out.println("Screenshot Captured");
-        } catch (Exception e) {
-            System.out.println("Exception while taking screenshot " + e.getMessage());
-        }
+    public void takeScreenShot(String screenShotName, String Path) throws IOException {
+        String fileName = screenShotName + ".png";
+        String directory = Path;
+        File sourceFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(sourceFile, new File(directory + fileName));
     }
-
-    public void takeScreenShot() throws IOException {
-        File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(file, new File("screenShots.png"));
-    }
-    */
 }

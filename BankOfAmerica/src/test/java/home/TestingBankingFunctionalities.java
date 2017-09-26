@@ -6,6 +6,8 @@ import base.CommonAPI;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class TestingBankingFunctionalities extends CommonAPI {
 
     public void Test_Checking() throws InterruptedException {
@@ -54,7 +56,7 @@ public class TestingBankingFunctionalities extends CommonAPI {
     }
 
     @Test
-    public void Test_Mobile_Banking() throws InterruptedException {
+    public void Test_Mobile_Banking() throws InterruptedException,IOException {
         Banking banking = PageFactory.initElements(driver, Banking.class);
         MobileBanking mobileBanking = PageFactory.initElements(driver, MobileBanking.class);
         banking.Mobile_Banking();
@@ -62,5 +64,6 @@ public class TestingBankingFunctionalities extends CommonAPI {
             Choose From: iPhone, iPad, Android, Windows 10, Other
          */
         mobileBanking.Get_The_App("iPhone");
+        takeScreenShot("TestScreenshot", "/Users/ibrahimkhan/IdeaProjects/AutomationFrameworkGroupTwo/BankOfAmerica/screenshots/");
     }
 }
