@@ -1,12 +1,13 @@
 package PersonalTab.BankingList;
 
 import PersonalTab.WaitForElement;
+import base.CommonAPI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 
-public class MobileBanking {
+public class MobileBanking extends CommonAPI {
 
     /*
         Hard Coded my Phone Number and Email, for Testing Purpose. So When Getting The App,
@@ -33,7 +34,7 @@ public class MobileBanking {
     @FindBy(how = How.ID, using = "choose-device")
     WebElement Select_Your_Device_Continue_Button;
 
-    @FindBy(how = How.NAME, using = "mobile_app_download_phone_number")
+    @FindBy(how = How.XPATH, using = "//input[@placeholder='Enter your iPhone phone number']")
     WebElement Select_Your_Device_Phone_Number_Box;
 
     @FindBy(how = How.ID, using = "mobile_app_download_email_id")
@@ -45,7 +46,7 @@ public class MobileBanking {
     @FindBy(how = How.ID, using = "anc_learn_more_about_phone_banking")
     WebElement Learn_About_Your_Text_Banking_Link;
 
-    @FindBy(how = How.ID, using = "mobile_app_download_send_button")
+    @FindBy(how = How.XPATH, using = "//form[@class='common-form']//a[text()='Send']")
     WebElement Send_To_Email_Or_Phone_Button;
 
     public void Get_The_App(String Device) {
@@ -57,6 +58,7 @@ public class MobileBanking {
             device.selectByValue("iPhone");
             Select_Your_Device_Continue_Button.click();
             Select_Your_Device_Phone_Number_Box.sendKeys(phoneNumber);
+            waitUntilClickable(Send_To_Email_Or_Phone_Button);
             Send_To_Email_Or_Phone_Button.click();
         } else if (Device.equalsIgnoreCase("iPad")) {
             device.selectByValue("iPad");
