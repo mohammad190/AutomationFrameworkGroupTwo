@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 42, Failures: 1, Errors: 0, Skipped: 41, Time elapsed: 30.656 sec <<< FAILURE! - in TestSuite
+setUp(testWikipedia.TestWikiHome)  Time elapsed: 0.318 sec  <<< FAILURE!
+java.lang.IllegalArgumentException
+

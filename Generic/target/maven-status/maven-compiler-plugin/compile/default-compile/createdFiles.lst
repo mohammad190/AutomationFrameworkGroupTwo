@@ -1,1 +1,6 @@
-base\CommonAPI.class
+reporting/ApplicationLog.class
+reporting/ExtentTestManager.class
+utility/DataReader.class
+reporting/TestLogger.class
+base/CommonAPI.class
+reporting/ExtentManager.class
