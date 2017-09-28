@@ -8,20 +8,20 @@ import org.openqa.selenium.support.How;
 public class MovingHomePageFeatures extends CommonAPI {
 
     @FindBy(how = How.XPATH,using = ".//a[@href='#_nextFrame']")
-    public static WebElement VisaPage;
+    WebElement VisaPage;
 
     @FindBy(how = How.XPATH,using = ".//a[@href='#_nextFrame']")
-    public static WebElement CollagePage;
+    WebElement CollagePage;
 
     @FindBy(how = How.XPATH,using = ".//a[@href='#_nextFrame']")
-    public static WebElement CheckingAccountPage;
+    WebElement CheckingAccountPage;
 
-    public static void HomepageFeatures()throws InterruptedException{
+    public void HomepageFeatures()throws InterruptedException{
         VisaPage.click();
-        Thread.sleep(3000);
+        Thread.sleep(200);
         CollagePage.click();
-        Thread.sleep(3000);
+        Thread.sleep(200);
         CheckingAccountPage.click();
-        Thread.sleep(3000);
+        Thread.sleep(200);
     }
 }

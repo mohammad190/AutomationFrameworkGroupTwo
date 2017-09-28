@@ -54,7 +54,7 @@ public class SetUpUserNamePassword extends CommonAPI {
 
         takeScreenShot(driver, "AfterCaseStatus", "C:\\Users\\sujon\\IdeaProjects\\AutomationFrameworkGroupTwo\\WellsFargo\\screenshots\\");
 
-        test.log(LogStatus.PASS, "Verified SSN Something blablabla");
+        test.log(LogStatus.PASS, "Verified SSN Something ");
         // test.log is basically same as saying, system.out.println();
         // except test.log will put everything in your reports folder as HTML
         //

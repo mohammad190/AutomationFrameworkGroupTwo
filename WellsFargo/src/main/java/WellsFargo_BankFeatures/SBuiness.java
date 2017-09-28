@@ -8,10 +8,10 @@ import org.openqa.selenium.support.How;
 public class SBuiness extends CommonAPI {
 
     @FindBy(how = How.ID,using = "tabNavSmallBusiness")
-    public static WebElement SmallBusiness;
+    WebElement SmallBusiness;
 
     @FindBy(how = How.ID,using = "otherSvcs")
-    public static WebElement ElectronicsPayment;
+    WebElement ElectronicsPayment;
 
     public void SmallBuss(){
         SmallBusiness.click();

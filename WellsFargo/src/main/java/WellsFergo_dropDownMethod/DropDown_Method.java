@@ -17,17 +17,17 @@ public class DropDown_Method extends CommonAPI {
         Destination_Box.click();
         Select select = new Select(Destination_Box);
         select.selectByValue("AccountSummary");
-        Thread.sleep(2000);
+        Thread.sleep(200);
         select.selectByValue("Transfer");
-        Thread.sleep(2000);
+        Thread.sleep(200);
         select.selectByValue("BillPay");
-        Thread.sleep(2000);
+        Thread.sleep(200);
         select.selectByValue("Brokerage");
-        Thread.sleep(2000);
+        Thread.sleep(200);
         select.selectByValue("Trade");
-        Thread.sleep(2000);
+        Thread.sleep(200);
         select.selectByValue("MessageAlerts") ;
-        Thread.sleep(2000);
+        Thread.sleep(200);
         System.out.println("This all test is passed");
 
         takeScreenShot(driver, "AfterCaseStatus", "C:\\Users\\sujon\\IdeaProjects\\AutomationFrameworkGroupTwo\\WellsFargo\\screenshots\\");
