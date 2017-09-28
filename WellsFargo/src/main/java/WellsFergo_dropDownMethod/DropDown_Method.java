@@ -32,8 +32,6 @@ public class DropDown_Method extends CommonAPI {
 
         takeScreenShot(driver, "AfterCaseStatus", "C:\\Users\\sujon\\IdeaProjects\\AutomationFrameworkGroupTwo\\WellsFargo\\screenshots\\");
 
-
-
     }
 
 }
