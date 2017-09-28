@@ -20,6 +20,8 @@ public class WikiMainPage extends CommonAPI {
     public static WebElement searchBox;
     @FindBy (how = How.CLASS_NAME, using = "searchButton")
     public static WebElement searchBtn;
+    @FindBy (how = How.ID, using = "ca-history")
+    public static WebElement viewHistoryBtn;
 
 
 
@@ -41,6 +43,9 @@ public class WikiMainPage extends CommonAPI {
         searchBox.sendKeys(Keys);
         searchBtn.click();
 
+    }
+    public void viewHisBtn(){
+        viewHistoryBtn.click();
     }
 
 }

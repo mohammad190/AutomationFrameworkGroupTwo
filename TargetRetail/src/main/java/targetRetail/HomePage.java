@@ -48,6 +48,9 @@ public class HomePage extends CommonAPI {
     public static WebElement findStoreBtn;
     @FindBy(how = How.XPATH, using = ".//*[@id='headerTop']/header/nav/ul/li[6]/a")
     public static WebElement crushBtn;
+    @FindBy(how = How.XPATH, using = ".//*[@id='footer']/div/div[2]/ul[1]/li[1]/a")
+    public static WebElement recallBtn;
+
 
     public void homeBtn(){
         homeBtn.click();
@@ -115,5 +118,8 @@ public class HomePage extends CommonAPI {
     }
     public void crushBtn(){
     crushBtn.click();
+    }
+    public void recallBtn(){
+        recallBtn.click();
     }
 }

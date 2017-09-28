@@ -91,5 +91,10 @@ public class testHomePage extends CommonAPI {
         HomePage hp = PageFactory.initElements(driver, HomePage.class);
         hp.crushBtn();
     }
+    @Test
+    public void testRecallBtn(){
+        HomePage hp = PageFactory.initElements(driver, HomePage.class);
+        hp.recallBtn();
+    }
 
 }
