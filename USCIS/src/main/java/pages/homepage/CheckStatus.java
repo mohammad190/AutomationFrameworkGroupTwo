@@ -31,5 +31,8 @@ public class CheckStatus extends CommonAPI {
             Thread.sleep(1000);
             Receipt_Number_Box.clear();
         }
+
+        takeScreenShot("AfterCaseStatus", "/Users/ibrahimkhan/IdeaProjects/AutomationFrameworkGroupTwo/USCIS/screenshots/");
+
     }
 }
