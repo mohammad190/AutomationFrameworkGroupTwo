@@ -4,8 +4,6 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,19 +13,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import reporting.ExtentManager;
-import reporting.ExtentTestManager;
+import reporting.ExtentFactory;
 
 import java.io.*;
-import java.lang.reflect.Method;
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class CommonAPI {
@@ -55,7 +46,7 @@ public class CommonAPI {
                 get_Cloud_Driver(cloudEnvName, saucelabs_username, saucelabs_accesskey, OS, OS_Version, browser, Browser_Version);
             }
         } else{
-            report = new ExtentReports(reportFileName + ".html");
+            report = ExtentFactory.getInstance(reportFileName);
             test = report.startTest(testName);
             get_Local_Driver(OS, browser);
             driver.manage().window().maximize();
@@ -72,7 +63,6 @@ public class CommonAPI {
         if (OS.equalsIgnoreCase("MacOS")) {
             if (browser.equalsIgnoreCase("Firefox")) {
                 System.setProperty("webdriver.gecko.driver", "../Generic/macdriver/geckodriver");
-                test.log(LogStatus.INFO, "Firefox Driver For Mac Executed.");
                 driver = new FirefoxDriver();
                 test.log(LogStatus.INFO, "Firefox Driver For Mac Executed.");
             } else if (browser.equalsIgnoreCase("Chrome")) {
@@ -86,19 +76,19 @@ public class CommonAPI {
             if (browser.equalsIgnoreCase("Firefox")) {
                 System.setProperty("webdriver.gecko.driver", "../Generic/driver/geckodriver.exe");
                 driver = new FirefoxDriver();
-                test.log(LogStatus.INFO, "Firefox Driver For Mac Executed.");
+                test.log(LogStatus.INFO, "Firefox Driver For Windows Executed.");
             } else if (browser.equalsIgnoreCase("Chrome")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/driver/chromedriver.exe");
                 driver = new ChromeDriver();
-                test.log(LogStatus.INFO, "Chrome Driver For Mac Executed.");
+                test.log(LogStatus.INFO, "Chrome Driver For Windows Executed.");
             } else if (browser.equalsIgnoreCase("IE")) {
                 System.setProperty("webdriver.IE.driver", "../Generic/driver/IEDriverServer.exe");
                 driver = new InternetExplorerDriver();
-                test.log(LogStatus.INFO, "InternetExplorer Driver For Mac Executed.");
+                test.log(LogStatus.INFO, "InternetExplorer Driver For Windows Executed.");
             } else if (browser.equalsIgnoreCase("Opera")) {
                 System.setProperty("webdriver.opera.driver", "../Generic/driver/operadriver.exe");
                 driver = new OperaDriver();
-                test.log(LogStatus.INFO, "Opera Driver For Mac Executed.");
+                test.log(LogStatus.INFO, "Opera Driver For Windows Executed.");
             } else {
                 System.err.println("ERROR: Choose from: Firefox/Chrome/IE/Opera.");
                 test.log(LogStatus.INFO, "Invalid Choice Of Driver.");

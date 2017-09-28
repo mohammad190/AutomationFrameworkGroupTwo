@@ -13,7 +13,7 @@ public class CheckStatus extends CommonAPI {
     @FindBy(id = "receipt_number")
     WebElement Receipt_Number_Box;
 
-    @FindBy(xpath = "//input[@type='sumit']")
+    @FindBy(xpath = "//input[@type='submit']")
     WebElement Check_Status_Button;
 
     public void Check_Case_Status(String filePath, int sheetNumber) throws Exception {
