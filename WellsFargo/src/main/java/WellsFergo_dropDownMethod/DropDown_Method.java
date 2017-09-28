@@ -30,14 +30,9 @@ public class DropDown_Method extends CommonAPI {
         Thread.sleep(2000);
         System.out.println("This all test is passed");
 
-        takeScreenShot("AfterCaseStatus", "C:\\Users\\sujon\\IdeaProjects\\AutomationFrameworkGroupTwo\\WellsFargo\\screenshots\\");
+        takeScreenShot(driver, "AfterCaseStatus", "C:\\Users\\sujon\\IdeaProjects\\AutomationFrameworkGroupTwo\\WellsFargo\\screenshots\\");
 
-        // Dont need to make WebElement public and static, should work without
-        // It wasnt working because TakeScreenShot ISNT static in CommonAPI but you called it here
-        // inside a static method, thats why. Try now,
-        // And also make sure to push let me know when you pushed then you can pull
-        // Ive added some few more features
-        //
+
 
     }
 

@@ -1,6 +1,7 @@
 package ForgotUserNamePassword;
 
 import base.CommonAPI;
+import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -30,28 +31,42 @@ public class SetUpUserNamePassword extends CommonAPI {
 
     public void UserNameAndPasswordFeatures(String SSN1, String SSN2, String SSN3, String Password)throws Exception {
         Go_UserNamePassword.click();
+        test.log(LogStatus.INFO, "Clicking UserNamePassword");
         Thread.sleep(500);
         Go_FindUserName.click();
+        test.log(LogStatus.INFO, "Clicking Find UserName");
         Thread.sleep(500);
         Go_SSN_Box_1.sendKeys(SSN1);
+        test.log(LogStatus.INFO, "Entering Numbers In SSN Box 1");
         Thread.sleep(500);
         Go_SSN_Box_2.sendKeys(SSN2);
+        test.log(LogStatus.INFO, "Entering Numbers In SSN Box 2");
         Thread.sleep(500);
         Go_SSN_Box_3.sendKeys(SSN3);
+        test.log(LogStatus.INFO, "Entering Numbers In SSN Box 3");
         Thread.sleep(500);
         Go_Password.sendKeys(Password);
+        test.log(LogStatus.INFO, "Entering Password");
         Thread.sleep(500);
         Go_Continue.click();
+        test.log(LogStatus.INFO, "Clicking On Go.");
         Thread.sleep(500);
 
-        takeScreenShot("AfterCaseStatus", "C:\\Users\\sujon\\IdeaProjects\\AutomationFrameworkGroupTwo\\WellsFargo\\screenshots\\");
-        // Try to make the code more clean
-        // Dont use this much of Thread.sleep, one single test case will take too much time otherwise
-        // Try to avoid using Thread.sleep
-        // Just use this screenshot method wherever you need it,
-        // Push and pull, Ive added a feature where it takes screenshot automatically for you
-        // If test case fails
+        takeScreenShot(driver, "AfterCaseStatus", "C:\\Users\\sujon\\IdeaProjects\\AutomationFrameworkGroupTwo\\WellsFargo\\screenshots\\");
 
-        // Is there aything else you need help with sujon bhai, not now, ok take care bhai
+        test.log(LogStatus.PASS, "Verified SSN Something blablabla");
+        // test.log is basically same as saying, system.out.println();
+        // except test.log will put everything in your reports folder as HTML
+        //
+        // So basically you dont have to use this everywhere, but you can use this to verify
+        // steps and have it as report in HTML.
+        // If a testcase fails, it will automatically take screenshot.
+        // Also if you want to change the html path or name, just do it in the .xml file
+
+        // Does that make sense? and is it helpful bhai?its really helpful
+
+        // Awesome! I am adding more features later on, will give updates, but for now add these things
+        // in some places and make your code a bit more clean, when we present our project in bootcamp
+
     }
 }
