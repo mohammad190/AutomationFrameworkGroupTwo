@@ -8,8 +8,8 @@ public class ExtentFactory {
         ExtentReports extent;
         String Path = reportFileName + ".html";
         extent = new ExtentReports(Path, false);
-        extent.addSystemInfo("Platform", "Mac").addSystemInfo("Environment", "QA")
-                .addSystemInfo("UserName", "Ibrahim Khan");
+        extent.addSystemInfo("Host", "Ibrahim Khan").addSystemInfo("Environment", "QA")
+                .addSystemInfo("Framework" , "Hybrid");
         return extent;
     }
 }
