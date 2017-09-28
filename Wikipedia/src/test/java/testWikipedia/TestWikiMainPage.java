@@ -35,5 +35,11 @@ public class TestWikiMainPage extends CommonAPI {
         WikiMainPage wikiMainPage = PageFactory.initElements(driver,WikiMainPage.class);
         wikiMainPage.goToCreateAccountPage();
     }
+    @Test
+    public void testViewHistorybtn(){
+        mainPage();
+        WikiMainPage wikiMainPage = PageFactory.initElements(driver,WikiMainPage.class);
+        wikiMainPage.viewHisBtn();
+    }
 
 }
