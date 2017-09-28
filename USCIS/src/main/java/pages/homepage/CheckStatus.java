@@ -1,6 +1,7 @@
 package pages.homepage;
 
 import base.CommonAPI;
+import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -24,12 +25,14 @@ public class CheckStatus extends CommonAPI {
         for(int i = 1; i < value.length; i++) {
             Thread.sleep(1000);
             Receipt_Number_Box.sendKeys(value[i]);
-            Thread.sleep(1000);
+            test.log(LogStatus.INFO, "Reading From Excel File.");
             Check_Status_Button.click();
-            Thread.sleep(1000);
+            test.log(LogStatus.INFO, "Clicking On Check Status Button.");
             driver.navigate().back();
-            Thread.sleep(1000);
+            test.log(LogStatus.INFO, "Navigating Back To Previous Site.");
             Receipt_Number_Box.clear();
+            test.log(LogStatus.INFO, "Clearing Receipt Number Field.");
+            test.log(LogStatus.PASS, "Verified Case Status Check.");
         }
 
         takeScreenShot("AfterCaseStatus", "/Users/ibrahimkhan/IdeaProjects/AutomationFrameworkGroupTwo/USCIS/screenshots/");

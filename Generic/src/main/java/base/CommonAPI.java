@@ -1,6 +1,7 @@
 package base;
 
 import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -31,65 +32,8 @@ import java.util.concurrent.TimeUnit;
 
 public class CommonAPI {
 
-
-    /*
-    public static ExtentReports extent;
-
-    @BeforeSuite
-    public void extentSetup(ITestContext context) {
-        ExtentManager.setOutputDirectory(context);
-        extent = ExtentManager.getInstance();
-    }
-
-    @BeforeMethod
-    public void startExtent(Method method) {
-        String className = method.getDeclaringClass().getSimpleName();
-        String methodName = method.getName().toLowerCase();
-        ExtentTestManager.startTest(method.getName());
-        ExtentTestManager.getTest().assignCategory(className);
-    }
-
-    protected String getStackTrace(Throwable t) {
-        StringWriter sw = new StringWriter();
-        PrintWriter pw = new PrintWriter(sw);
-        t.printStackTrace(pw);
-        return sw.toString();
-    }
-
-    @AfterMethod
-    public void afterEachTestMethod(ITestResult result) {
-        ExtentTestManager.getTest().getTest().setStartedTime(getTime(result.getStartMillis()));
-        ExtentTestManager.getTest().getTest().setEndedTime(getTime(result.getEndMillis()));
-
-        for(String group : result.getMethod().getGroups()) {
-            ExtentTestManager.getTest().assignCategory(group);
-        }
-
-        if(result.getStatus() == 1) {
-            ExtentTestManager.getTest().log(LogStatus.PASS, "Test Passed");
-        } else if (result.getStatus() == 2) {
-            ExtentTestManager.getTest().log(LogStatus.FAIL, getStackTrace(result.getThrowable()));
-        } else if (result.getStatus() == 3) {
-            ExtentTestManager.getTest().log(LogStatus.SKIP, "Test Skipped");
-        }
-        ExtentTestManager.endTest();
-        extent.flush();
-        if(result.getStatus() == ITestResult.FAILURE) {
-            captureScreenshot(driver, result.getName());
-        }
-    }
-
-    @AfterSuite
-    public void generateReport() {
-        extent.close();
-    }
-
-    private Date getTime(long millis) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(millis);
-        return calendar.getTime();
-    }
-    */
+    public static ExtentReports report;
+    public static ExtentTest test;
 
     public static WebDriver driver;
 
@@ -98,10 +42,11 @@ public class CommonAPI {
     private String browserstack_username = "ibrahimkhan1";
     private String browserstack_accesskey = "p3yyfzCAhLyz92aajAAK";
 
-    @Parameters({"useCloudEnv", "cloudEnvName", "OS", "OS_Version", "Browser_Version", "browser","url"})
+    @Parameters({"useCloudEnv", "cloudEnvName", "OS", "OS_Version", "Browser_Version", "browser","url", "reportFileName", "testName"})
     @BeforeMethod
     public void setUp(@Optional boolean useCloudEnv,@Optional String cloudEnvName,@Optional String OS,@Optional String OS_Version,
-                      @Optional String Browser_Version, String browser, String url) throws Exception {
+                      @Optional String Browser_Version, @Optional String browser,
+                      @Optional String url, @Optional String reportFileName, @Optional String testName) throws Exception {
         if (useCloudEnv == true) {
             if(cloudEnvName.equalsIgnoreCase("Browserstack")) {
                 get_Cloud_Driver(cloudEnvName, browserstack_username, browserstack_accesskey, OS, OS_Version, browser, Browser_Version);
@@ -109,11 +54,15 @@ public class CommonAPI {
                 get_Cloud_Driver(cloudEnvName, saucelabs_username, saucelabs_accesskey, OS, OS_Version, browser, Browser_Version);
             }
         } else{
+            report = new ExtentReports(reportFileName + ".html");
+            test = report.startTest(testName);
             get_Local_Driver(OS, browser);
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            driver.manage().window().maximize();
+            test.log(LogStatus.INFO, "Browser Maximized.");
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
             driver.navigate().to(url);
-            driver.manage().window().maximize();
+            test.log(LogStatus.INFO, "Web Application Opened.");
         }
     }
 
@@ -122,10 +71,13 @@ public class CommonAPI {
         if (OS.equalsIgnoreCase("MacOS")) {
             if (browser.equalsIgnoreCase("Firefox")) {
                 System.setProperty("webdriver.gecko.driver", "../Generic/macdriver/geckodriver");
+                test.log(LogStatus.INFO, "Firefox Driver For Mac Executed.");
                 driver = new FirefoxDriver();
+                test.log(LogStatus.INFO, "Firefox Driver For Mac Executed.");
             } else if (browser.equalsIgnoreCase("Chrome")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/macdriver/chromedriver");
                 driver = new ChromeDriver();
+                test.log(LogStatus.INFO, "Chrome Driver For Mac Executed.");
             } else {
                 System.err.println("ERROR: Choose from: Firefox/Chrome.");
             }
@@ -133,17 +85,22 @@ public class CommonAPI {
             if (browser.equalsIgnoreCase("Firefox")) {
                 System.setProperty("webdriver.gecko.driver", "../Generic/driver/geckodriver.exe");
                 driver = new FirefoxDriver();
+                test.log(LogStatus.INFO, "Firefox Driver For Mac Executed.");
             } else if (browser.equalsIgnoreCase("Chrome")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/driver/chromedriver.exe");
                 driver = new ChromeDriver();
+                test.log(LogStatus.INFO, "Chrome Driver For Mac Executed.");
             } else if (browser.equalsIgnoreCase("IE")) {
                 System.setProperty("webdriver.IE.driver", "../Generic/driver/IEDriverServer.exe");
                 driver = new InternetExplorerDriver();
+                test.log(LogStatus.INFO, "InternetExplorer Driver For Mac Executed.");
             } else if (browser.equalsIgnoreCase("Opera")) {
                 System.setProperty("webdriver.opera.driver", "../Generic/driver/operadriver.exe");
                 driver = new OperaDriver();
+                test.log(LogStatus.INFO, "Opera Driver For Mac Executed.");
             } else {
                 System.err.println("ERROR: Choose from: Firefox/Chrome/IE/Opera.");
+                test.log(LogStatus.INFO, "Invalid Choice Of Driver.");
                 }
             }
             return driver;
@@ -172,6 +129,8 @@ public class CommonAPI {
     @AfterMethod
     public void close_Browser() {
         driver.quit();
+        report.endTest(test);
+        report.flush();
     }
 
     public void okAlert(){

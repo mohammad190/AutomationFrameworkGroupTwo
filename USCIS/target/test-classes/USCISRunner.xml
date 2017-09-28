@@ -9,6 +9,8 @@
     <parameter name="browser" value="Chrome"/>
     <parameter name="Browser_Version" value="53.0"/>
     <parameter name="url" value="https://www.uscis.gov/"/>
+    <parameter name="reportFileName" value="/Users/ibrahimkhan/IdeaProjects/AutomationFrameworkGroupTwo/USCIS/reports/TestCases"/>
+    <parameter name="testName" value="USCIS Automation"/>
 
     <test name="USCIS Automation">
         <classes>
