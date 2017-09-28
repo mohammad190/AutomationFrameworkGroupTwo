@@ -37,22 +37,22 @@ public class FAQ_s extends CommonAPI {
 
     public static void Features_FAQ_s()throws InterruptedException{
         Go_ATM_Loacation.click();
-        Thread.sleep(1000);
         Go_FAQs.click();
-        Thread.sleep(1000);
+        Thread.sleep(500);
         Go_Top_question.click();
-        Thread.sleep(1000);
+        Thread.sleep(500);
         Go_WellsFergo_online.click();
-        Thread.sleep(1000);
+        Thread.sleep(500);
         Go_Loans_credit.click();
-        Thread.sleep(1000);
+        Thread.sleep(500);
         Go_Investing.click();
-        Thread.sleep(1000);
+        Thread.sleep(500);
         Go_Retirement.click();
-        Thread.sleep(1000);
+        Thread.sleep(500);
         Go_Insurance_protection.click();
-        Thread.sleep(1000);
+        Thread.sleep(500);
         Go_About_wellsFargo.click();
+        Thread.sleep(500);
         Thread.sleep(1000);
 
 
