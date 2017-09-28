@@ -10,5 +10,6 @@ public class TestTodaysDeals extends CommonAPI {
     public void TodaysDeals() throws InterruptedException {
         TodaysDeals tdeal = PageFactory.initElements(driver, TodaysDeals.class);
         tdeal.Todays_Deals();
+
     }
 }

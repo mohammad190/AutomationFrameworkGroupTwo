@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 
 public class TodaysDeals extends CommonAPI {
 
-    @FindBy(how = How.XPATH, using = ".//div[1]/header/div/div[2]/div[3]/div/div/a[2]")
+    @FindBy(how = How.XPATH, using = "//div//a[@href='/gp/goldbox/ref=nav_cs_gb/138-7718627-8681933']")
     WebElement Todays_Deals;
 
     public void Todays_Deals() {
