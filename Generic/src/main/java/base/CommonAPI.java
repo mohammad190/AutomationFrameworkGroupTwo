@@ -127,11 +127,25 @@ public class CommonAPI {
         return driver;
     }
 
+    @Parameters({"directoryPath"})
     @AfterMethod
-    public void close_Browser() {
-        driver.quit();
-        report.endTest(test);
-        report.flush();
+    public void close_Browser(ITestResult testResult, @Optional String directoryPath) throws IOException {
+
+        String path = null;
+        String imagePath = null;
+
+        if(testResult.getStatus() != ITestResult.SUCCESS) {
+            path = takeScreenShot(driver, testResult.getName(), directoryPath);
+            imagePath = test.addScreenCapture(path);
+            test.log(LogStatus.FAIL, "Failed Test Case", imagePath);
+            driver.quit();
+            report.endTest(test);
+            report.flush();
+        } else {
+            driver.quit();
+            report.endTest(test);
+            report.flush();
+        }
     }
 
     public void okAlert(){
@@ -183,10 +197,11 @@ public class CommonAPI {
         boolean element = wait.until(ExpectedConditions.elementToBeSelected(locator));
     }
 
-    public void takeScreenShot(String screenShotName, String Path) throws IOException {
-        String fileName = screenShotName + ".png";
-        String directory = Path;
+    public String takeScreenShot(WebDriver driver, String fileName, String Path) throws IOException {
+        fileName = fileName + ".png";
         File sourceFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(sourceFile, new File(directory + fileName));
+        FileUtils.copyFile(sourceFile, new File(Path + fileName));
+        String destination = Path + fileName;
+        return destination;
     }
 }

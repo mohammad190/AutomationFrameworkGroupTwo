@@ -13,7 +13,7 @@ public class CheckStatus extends CommonAPI {
     @FindBy(id = "receipt_number")
     WebElement Receipt_Number_Box;
 
-    @FindBy(xpath = "//input[@type='submit']")
+    @FindBy(xpath = "//input[@type='sumit']")
     WebElement Check_Status_Button;
 
     public void Check_Case_Status(String filePath, int sheetNumber) throws Exception {
@@ -34,8 +34,5 @@ public class CheckStatus extends CommonAPI {
             test.log(LogStatus.INFO, "Clearing Receipt Number Field.");
             test.log(LogStatus.PASS, "Verified Case Status Check.");
         }
-
-        takeScreenShot("AfterCaseStatus", "/Users/ibrahimkhan/IdeaProjects/AutomationFrameworkGroupTwo/USCIS/screenshots/");
-
     }
 }

@@ -12,6 +12,9 @@
     <parameter name="reportFileName" value="/Users/ibrahimkhan/IdeaProjects/AutomationFrameworkGroupTwo/USCIS/reports/TestCases"/>
     <parameter name="testName" value="USCIS Automation"/>
 
+    <!-- For ScreenShot, AfterMethod -->
+    <parameter name="directoryPath" value="/Users/ibrahimkhan/IdeaProjects/AutomationFrameworkGroupTwo/USCIS/screenshots/"/>
+
     <test name="USCIS Automation">
         <classes>
             <class name="test.HomePageFunctionalities"/>
