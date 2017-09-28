@@ -64,6 +64,5 @@ public class TestingBankingFunctionalities extends CommonAPI {
             Choose From: iPhone, iPad, Android, Windows 10, Other
          */
         mobileBanking.Get_The_App("iPhone");
-        takeScreenShot("TestScreenshot", "/Users/ibrahimkhan/IdeaProjects/AutomationFrameworkGroupTwo/BankOfAmerica/screenshots/");
     }
 }
