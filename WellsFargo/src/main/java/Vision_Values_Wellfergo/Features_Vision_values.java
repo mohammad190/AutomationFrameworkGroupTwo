@@ -8,52 +8,52 @@ import org.openqa.selenium.support.How;
 public class Features_Vision_values  extends CommonAPI {
 
     @FindBy(how = How.XPATH, using = ".//*[@id='communityLinks']/li[1]/a")
-    public static WebElement Go_features_Vision_1;
+    WebElement Go_features_Vision_1;
 
     @FindBy(how = How.LINK_TEXT, using = "Welcome")
-    public static WebElement Go_Welcome_2;
+    WebElement Go_Welcome_2;
 
     @FindBy(how = How.LINK_TEXT, using = "Our Vision")
-    public static WebElement Go_Our_vision_3;
+    WebElement Go_Our_vision_3;
 
     @FindBy(how = How.LINK_TEXT, using = "Our Values")
-    public static WebElement Go_Values_4;
+    WebElement Go_Values_4;
 
     @FindBy(how = How.LINK_TEXT, using = "Our Culture")
-    public static WebElement Go_OurCulture_5;
+    WebElement Go_OurCulture_5;
 
 //    @FindBy(how = How.LINK_TEXT, using = "Who We Are")
 //    public static WebElement Go_WoWeAre_6;
 
     @FindBy(how = How.XPATH, using = ".//a[@href='javascript:;']")
-    public static WebElement Go_OurStarategy_7;
+    WebElement Go_OurStarategy_7;
 
     @FindBy(how = How.LINK_TEXT, using = "Our Goals")
-    public static WebElement Go_OurGoals_8;
+    WebElement Go_OurGoals_8;
 
     @FindBy(how = How.LINK_TEXT, using = "Our Future")
-    public static WebElement Go_Ourfuture_9;
+    WebElement Go_Ourfuture_9;
 
-    public static void Features_vision() throws InterruptedException {
+    public void Features_vision() throws InterruptedException {
 
         Go_features_Vision_1.click();
-        Thread.sleep(2000);
+        Thread.sleep(300);
         Go_Welcome_2.click();
-        Thread.sleep(2000);
+        Thread.sleep(300);
         Go_Our_vision_3.click();
-        Thread.sleep(2000);
+        Thread.sleep(300);
         Go_Values_4.click();
-        Thread.sleep(2000);
+        Thread.sleep(300);
         Go_OurCulture_5.click();
-        Thread.sleep(2000);
+        Thread.sleep(300);
 //        Go_WoWeAre_6.click();
 //        Thread.sleep(2000);
         Go_OurStarategy_7.click();
-        Thread.sleep(2000);
+        Thread.sleep(300);
         Go_OurGoals_8.click();
-        Thread.sleep(2000);
+        Thread.sleep(300);
         Go_Ourfuture_9.click();
-        Thread.sleep(2000);
+        Thread.sleep(300);
     }
 }
 

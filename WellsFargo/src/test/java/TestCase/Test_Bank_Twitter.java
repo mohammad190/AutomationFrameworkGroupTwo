@@ -13,6 +13,4 @@ public class Test_Bank_Twitter extends CommonAPI {
         click_twitter.Twitter_Features();
 
     }
-
-
 }

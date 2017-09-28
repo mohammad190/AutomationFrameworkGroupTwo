@@ -9,54 +9,54 @@ import org.openqa.selenium.support.How;
 public class WealthManagement extends CommonAPI {
 
     @FindBy(how = How.XPATH, using = ".//a[@id='wealthTab']")
-    public static WebElement click_WealthManagements_1;
+    WebElement click_WealthManagements_1;
 
     @FindBy(how = How.LINK_TEXT, using = "The Private Bank")
-    public static WebElement click_ThePrivateBank_2;
+    WebElement click_ThePrivateBank_2;
 
     @FindBy(how = How.LINK_TEXT, using = "Wells Fargo Advisors")
-    public static WebElement click_WellsFergoAdvisior_3;
+    WebElement click_WellsFergoAdvisior_3;
 
     @FindBy(how = How.LINK_TEXT, using = "Abbot Downing")
-    public static WebElement click_AbbotDowing_4;
+    WebElement click_AbbotDowing_4;
 
     @FindBy(how = How.LINK_TEXT, using = "All Wealth Management Services")
-    public static WebElement click_AllWealthManagementsService_5;
+    WebElement click_AllWealthManagementsService_5;
 
     @FindBy(how = How.LINK_TEXT, using = "Wealth Planning")
-    public static WebElement click_WealthPlanning_6;
+    WebElement click_WealthPlanning_6;
 
     @FindBy(how = How.LINK_TEXT, using = "Private Banking")
-    public static WebElement click_PrivateBanking_7;
+    WebElement click_PrivateBanking_7;
 
     @FindBy(how = How.LINK_TEXT, using = "Investment Management")
-    public static WebElement click_InvestmentManagement_8;
+    WebElement click_InvestmentManagement_8;
 
     @FindBy(how = How.LINK_TEXT, using = "Specialized Wealth Services")
-    public static WebElement click_SpecializedManagement_9;
+    WebElement click_SpecializedManagement_9;
 
     @FindBy(how = How.LINK_TEXT, using = "Trust Services")
-    public static WebElement click_TrustService_10;
+    WebElement click_TrustService_10;
 
     @FindBy(how = How.LINK_TEXT, using = "Strategy and Research")
-    public static WebElement click_StrategyAndReserce_11;
+    WebElement click_StrategyAndReserce_11;
 
     @FindBy(how = How.LINK_TEXT, using = "Wealth Management Insights")
-    public static WebElement click_WealthManagementsInsights_12;
+    WebElement click_WealthManagementsInsights_12;
 
     @FindBy(how = How.LINK_TEXT, using = "Conversations Magazine")
-    public static WebElement click_ConversationMagazine_13;
+    WebElement click_ConversationMagazine_13;
 
     @FindBy(how = How.LINK_TEXT, using = "Contact The Private Bank")
-    public static WebElement click_contactThePrivateBank_14;
+    WebElement click_contactThePrivateBank_14;
 
     @FindBy(how = How.LINK_TEXT, using = "Contact Wells Fargo Advisors")
-    public static WebElement click_ContactWellsFergoAdvisor_15;
+    WebElement click_ContactWellsFergoAdvisor_15;
 
     @FindBy(how = How.LINK_TEXT, using = "Contact Abbot Downing")
-    public static WebElement click_ContactAbbotDowing_16;
+    WebElement click_ContactAbbotDowing_16;
 
-    public static void WealthsManagements_features() throws InterruptedException {
+    public void WealthsManagements_features() throws InterruptedException {
         Actions action = new Actions(driver);
         WebElement element = click_WealthManagements_1;
         action.moveToElement(element).perform();
@@ -120,6 +120,6 @@ public class WealthManagement extends CommonAPI {
         click_ContactAbbotDowing_16.click();
         driver.navigate().back();
         action.moveToElement(element).perform();
-        Thread.sleep(3000);
+        Thread.sleep(300);
     }
 }
