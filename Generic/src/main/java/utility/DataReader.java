@@ -1,10 +1,7 @@
 package utility;
 
-
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,45 +9,24 @@ import java.io.IOException;
 
 public class DataReader {
 
-    HSSFWorkbook workbook = null;
-    HSSFSheet sheet = null;
-    int numberOfRows, numberOfCol, rowNum;
+    Workbook workbook = null;
+    Sheet sheet = null;
+    int numberOfRows, numberOfCols;
 
-    public String[][] fileReader2D(String path) throws IOException {
-        String[][] data = {};
-        File file = new File(path);
-        FileInputStream fis = new FileInputStream(file);
-        workbook = new HSSFWorkbook(fis);
-        sheet = workbook.getSheetAt(0);
-        numberOfRows = sheet.getLastRowNum();
-        numberOfCol = sheet.getRow(0).getLastCellNum();
-        data = new String[numberOfRows + 1][numberOfCol + 1];
-
-        for(int i = 1; i < data.length; i++) {
-            HSSFRow rows = sheet.getRow(i);
-            for(int j = 0; j < numberOfCol; j++) {
-                HSSFCell cell = rows.getCell(j);
-                String cellData = getCellValue(cell);
-                data[i][j] = cellData;
-            }
-        }
-        return data;
-    }
-
-    public  String[] fileReader(String path) throws IOException {
+    public String[] readExcel(String path, int sheetNumber) throws IOException, InvalidFormatException {
         String[] data = {};
         File file = new File(path);
         FileInputStream fis = new FileInputStream(file);
-        workbook = new HSSFWorkbook(fis);
-        sheet = workbook.getSheetAt(0);
+        workbook = WorkbookFactory.create(fis);
+        sheet = workbook.getSheetAt(sheetNumber);
         numberOfRows = sheet.getLastRowNum();
-        numberOfCol = sheet.getRow(0).getLastCellNum();
+        numberOfCols = sheet.getRow(0).getLastCellNum();
         data = new String[numberOfRows + 1];
 
         for(int i = 1; i < data.length; i++) {
-            HSSFRow rows = sheet.getRow(i);
-            for(int j = 0; j < numberOfCol; j++) {
-                HSSFCell cell = rows.getCell(j);
+            Row rows = sheet.getRow(i);
+            for(int j = 0; j < numberOfCols; j++) {
+                Cell cell = rows.getCell(j);
                 String cellData = getCellValue(cell);
                 data[i] = cellData;
             }
@@ -58,18 +34,39 @@ public class DataReader {
         return data;
     }
 
-    public String getCellValue(HSSFCell cell) {
+    public String[][] readExcel2D(String path, int sheetNumber) throws IOException, InvalidFormatException {
+        String[][] data = {};
+        File file = new File(path);
+        FileInputStream fis = new FileInputStream(file);
+        workbook = WorkbookFactory.create(fis);
+        sheet = workbook.getSheetAt(sheetNumber);
+        numberOfRows = sheet.getLastRowNum();
+        numberOfCols = sheet.getRow(0).getLastCellNum();
+        data = new String[numberOfRows + 1][numberOfCols + 1];
+
+        for(int i = 1; i < data.length; i++) {
+            Row rows = sheet.getRow(i);
+            for(int j = 0; j < numberOfCols; j++) {
+                Cell cell = rows.getCell(j);
+                String cellData = getCellValue(cell);
+                data[i][j] = cellData;
+            }
+        }
+        return data;
+    }
+
+    public String getCellValue(Cell cell) {
         Object value = null;
 
         int dataType = cell.getCellType();
         switch (dataType) {
-            case HSSFCell.CELL_TYPE_NUMERIC:
+            case Cell.CELL_TYPE_NUMERIC:
                 value = cell.getNumericCellValue();
                 break;
-            case HSSFCell.CELL_TYPE_STRING:
+            case Cell.CELL_TYPE_STRING:
                 value = cell.getStringCellValue();
                 break;
-            case HSSFCell.CELL_TYPE_BOOLEAN:
+            case Cell.CELL_TYPE_BOOLEAN:
                 value = cell.getBooleanCellValue();
                 break;
         }
