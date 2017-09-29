@@ -6,13 +6,16 @@
     <parameter name="cloudEnvName" value="browserstack"/>
     <parameter name="OS" value="Win"/>
     <parameter name="OS_Version" value="10"/>
+    <parameter name="browser" value="Chrome"/>
     <parameter name="Browser_Version" value="53.0"/>
-    <parameter name="browser" value="Firefox"/>
-    <parameter name="url" value="https://amazon.com"/>
-    <parameter name="reportFileName" value="Amazon/reports"/>
+        <parameter name="url" value="https://www.amazon.com/"/>
+
+    <parameter name="reportFileName" value="C:\Users\SAYEM\Desktop\SayemJava\AutomationFrameworkGroupTwo\Amazon\reports\testreport"/>
     <parameter name="testName" value="Amazon Automotion Test"/>
 
-    <test name="Amazon Automation Test">
+        <parameter name="directoryPath" value="C:\Users\SAYEM\Desktop\SayemJava\AutomationFrameworkGroupTwo\Amazon\screenshots\"/>
+
+    <test name="testName">
         <classes>
             <class name="testHome.TestDepartment"/>
             <class name="testHome.TestPrime"/>
