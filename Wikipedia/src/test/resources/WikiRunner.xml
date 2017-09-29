@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Wikipedia Automation Test" parallel="false">
-    <parameter name="browser" value="chrome"/>
+    <parameter name="useCloudEnv" value="false"/>
+    <parameter name="cloudEnvName" value="Browserstack"/>
+    <parameter name="OS" value="Win"/>
+    <parameter name="OS_Version" value="8"/>
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="Browser_Version" value="53.0"/>
     <parameter name="url" value="https://www.wikipedia.org/"/>
+
     <test name="wiki Test">
         <classes>
             <class name="testWikipedia.TestWikiHome"/>

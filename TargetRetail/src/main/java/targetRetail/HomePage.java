@@ -7,6 +7,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import java.io.IOException;
+
 public class HomePage extends CommonAPI {
     @FindBy(how = How.XPATH, using = ".//*[@id='header']/nav[1]/a[1]")
     public static WebElement homeBtn;
@@ -107,8 +109,9 @@ public class HomePage extends CommonAPI {
     public void weeklyAdH(){
         weeklyAdHBtn.click();
     }
-    public void redCard(){
+    public void redCard() throws IOException {
         redCardBtn.click();
+        takeScreenShot(driver, "RedCardPage","C:\\Users\\zeman\\IdeaProjects\\git\\AutomationFrameworkGroupTwo\\TargetRetail\\Screenshot\\");
     }
     public void findStore(){
         findStoreBtn.click();

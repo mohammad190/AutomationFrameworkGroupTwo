@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import java.io.IOException;
+
 public class WikiMainPage extends CommonAPI {
 
     @FindBy (how = How.XPATH, using = ".//*[@id='pt-anontalk']/a")
@@ -44,8 +46,9 @@ public class WikiMainPage extends CommonAPI {
         searchBtn.click();
 
     }
-    public void viewHisBtn(){
+    public void viewHisBtn() throws IOException {
         viewHistoryBtn.click();
+        takeScreenShot(driver, "HistoryTab", "C:\\Users\\zeman\\IdeaProjects\\git\\AutomationFrameworkGroupTwo\\Wikipedia\\Screenshot\\");
     }
 
 }

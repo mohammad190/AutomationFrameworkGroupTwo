@@ -5,8 +5,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import targetRetail.HomePage;
 
+import java.io.IOException;
+
 public class testHomePage extends CommonAPI {
-    @Test (enabled = false)
+    @Test
     public void testHomeBtn(){
         HomePage hp = PageFactory.initElements(driver, HomePage.class);
         hp.homeBtn();
@@ -72,7 +74,7 @@ public class testHomePage extends CommonAPI {
         hp.weeklyAdH();
     }
     @Test
-    public void testRedCardBtn(){
+    public void testRedCardBtn() throws IOException {
         HomePage hp = PageFactory.initElements(driver, HomePage.class);
         hp.redCard();
     }

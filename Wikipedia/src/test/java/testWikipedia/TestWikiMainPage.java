@@ -5,6 +5,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import wikiPedia.WikiMainPage;
 
+import java.io.IOException;
+
 public class TestWikiMainPage extends CommonAPI {
     public void mainPage(){
         driver.navigate().to("https://en.wikipedia.org/wiki/Main_Page");
@@ -36,7 +38,7 @@ public class TestWikiMainPage extends CommonAPI {
         wikiMainPage.goToCreateAccountPage();
     }
     @Test
-    public void testViewHistorybtn(){
+    public void testViewHistorybtn() throws IOException {
         mainPage();
         WikiMainPage wikiMainPage = PageFactory.initElements(driver,WikiMainPage.class);
         wikiMainPage.viewHisBtn();
