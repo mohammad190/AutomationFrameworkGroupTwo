@@ -9,7 +9,7 @@
     <parameter name="Browser_Version" value="53.0"/>
     <parameter name="browser" value="Firefox"/>
     <parameter name="url" value="https://amazon.com"/>
-    <parameter name="reportFileName" value="Amazon/reports"/>
+    <parameter name="reportFileName" value="../Amazon/reports"/>
     <parameter name="testName" value="Amazon Automotion Test"/>
 
     <test name="Amazon Automation Test">
