@@ -8,6 +8,7 @@
           <include name="searchCont"/>
           <include name="close_Browser"/>
           <include name="loginPage"/>
+          <include name="testViewHistorybtn"/>
           <include name="createAccountPage"/>
           <include name="setUp"/>
           <include name="testTalk"/>

@@ -1,6 +1,3 @@
-reporting/ApplicationLog.class
-reporting/ExtentTestManager.class
-utility/DataReader.class
-reporting/TestLogger.class
-base/CommonAPI.class
-reporting/ExtentManager.class
+base\CommonAPI.class
+utility\DataReader.class
+reporting\ExtentFactory.class
