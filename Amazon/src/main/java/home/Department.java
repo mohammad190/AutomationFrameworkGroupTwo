@@ -22,7 +22,6 @@ public class Department extends CommonAPI {
     @FindBy(how = How.XPATH, using = ".//div[1]/div[2]/div/div[2]/div[1]/div/a[1]")
     public static WebElement fireTvStick;
 
-
     @FindBy(how = How.ID, using = "twotabsearchtextbox")
     public static WebElement searchInput;
 
@@ -45,22 +44,17 @@ public class Department extends CommonAPI {
         act.moveToElement(departmentsDropDown).perform();
         act.moveToElement(fireTvSection).perform();
         fireTvStick.click();
-
     }
-
     public void signInFromAccNLists(){
         act.moveToElement(accNlistsDropDown).perform();
         homeSignInBtn.click();
     }
-
     public void logInFromAccNLists(String email, String pass){
         signInFromAccNLists();
         emailInput.sendKeys(email);
         passInput.sendKeys(pass);
         signInBtn.click();
-
     }
-
     public void searchFor(String value){
         searchInput.sendKeys(value);
     }
@@ -68,7 +62,4 @@ public class Department extends CommonAPI {
     public void clickOnShoppingCart(){
         shoppingCart.click();
     }
-
-
-
 }
