@@ -1,34 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Wikipedia Automation Test]">
-  <parameter name="browser" value="chrome"/>
-  <parameter name="url" value="https://www.wikipedia.org/"/>
-  <test name="wiki Test(failed)">
+<suite verbose="0" name="Failed suite [Command line suite]">
+  <test name="Command line test(failed)">
     <classes>
-      <class name="testWikipedia.testWikiCreateAccount">
+      <class name="testWikipedia.TestWikiMainPage">
         <methods>
-          <include name="loggingIn"/>
+          <include name="searchCont"/>
           <include name="close_Browser"/>
+          <include name="loginPage"/>
+          <include name="testViewHistorybtn"/>
+          <include name="createAccountPage"/>
           <include name="setUp"/>
+          <include name="testTalk"/>
         </methods>
-      </class> <!-- testWikipedia.testWikiCreateAccount -->
-      <class name="testWikipedia.testWikiLoginPage">
-        <methods>
-          <include name="getHelpWithLogin"/>
-          <include name="loggingIn"/>
-          <include name="ForgetPass"/>
-          <include name="close_Browser"/>
-          <include name="joinWikiPage"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- testWikipedia.testWikiLoginPage -->
-      <class name="testWikipedia.testWikiSearchOption">
-        <methods>
-          <include name="searchOption"/>
-          <include name="close_Browser"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- testWikipedia.testWikiSearchOption -->
+      </class> <!-- testWikipedia.TestWikiMainPage -->
       <class name="testWikipedia.TestWikiHome">
         <methods>
           <include name="testChn"/>
@@ -46,16 +31,6 @@
           <include name="setUp"/>
         </methods>
       </class> <!-- testWikipedia.TestWikiHome -->
-      <class name="testWikipedia.TestWikiMainPage">
-        <methods>
-          <include name="searchCont"/>
-          <include name="close_Browser"/>
-          <include name="loginPage"/>
-          <include name="createAccountPage"/>
-          <include name="setUp"/>
-          <include name="testTalk"/>
-        </methods>
-      </class> <!-- testWikipedia.TestWikiMainPage -->
     </classes>
-  </test> <!-- wiki Test(failed) -->
-</suite> <!-- Failed suite [Wikipedia Automation Test] -->
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->
