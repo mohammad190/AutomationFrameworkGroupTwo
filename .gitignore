@@ -2,8 +2,12 @@
 /.idea/
 /PNTAutomationGroupTwo.iml
 /PNT-Automation-Group-Two.iml
-<<<<<<< HEAD
 /Amazon/Amazon.iml
-=======
 /BankOfAmerica/BankOfAmerica.iml
->>>>>>> b1e7cf051ca677611048b7eccfb089f3126929fc
+/Generic/Generic.iml
+/Wikipedia/Wikipedia.iml
+/WellsFargo/WellsFargo.iml
+/USCIS/USCIS.iml
+/Twitter/Twitter.iml
+/TargetRetail/TargetRetail.iml
+/BandH/BandH.iml
