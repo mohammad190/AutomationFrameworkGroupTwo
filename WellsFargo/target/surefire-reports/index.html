@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-WellsFargo">
-              <span class="suite-name border-passed">WellsFargo</span>
+              <span class="suite-name border-skipped">WellsFargo</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method,  1 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-WellsFargo" class="hide-methods passed suite-WellsFargo"> (hide)</a> <!-- hide-methods passed suite-WellsFargo -->
-                      <a href="#" panel-name="suite-WellsFargo" class="show-methods passed suite-WellsFargo"> (show)</a> <!-- show-methods passed suite-WellsFargo -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-WellsFargo" class="hide-methods skipped suite-WellsFargo"> (hide)</a> <!-- hide-methods skipped suite-WellsFargo -->
+                      <a href="#" panel-name="suite-WellsFargo" class="show-methods skipped suite-WellsFargo"> (show)</a> <!-- show-methods skipped suite-WellsFargo -->
                     </span>
-                    <div class="method-list-content passed suite-WellsFargo">
+                    <div class="method-list-content skipped suite-WellsFargo">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-WellsFargo" title="Test_Check_Box.Test_CHeckBox" hash-for-method="Check_Box_example">Check_Box_example</a> <!-- method navigator-link -->
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-WellsFargo" title="TestCase.sBusiness" hash-for-method="SmallBusiness">SmallBusiness</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-WellsFargo -->
+                    </div> <!-- method-list-content skipped suite-WellsFargo -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,21 +117,37 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-WellsFargo" class="panel WellsFargo">
-          <div class="suite-WellsFargo-class-passed">
+          <div class="suite-WellsFargo-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">Test_Check_Box.Test_CHeckBox</span>
+              <img src="skipped.png"/>
+              <span class="class-name">TestCase.sBusiness</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Check_Box_example">
-                  </a> <!-- Check_Box_example -->
-                  <span class="method-name">Check_Box_example</span>
+                  <a name="SmallBusiness">
+                  </a> <!-- SmallBusiness -->
+                  <span class="method-name">SmallBusiness</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: Unable to parse remote response: Unsupported OS/browser/version/device combo: OS: &apos;Win&apos;, Browser: &apos;googlechrome&apos;, Version: &apos;latest&apos;, Device: &apos;unspecified&apos;
+Build info: version: &apos;3.5.3&apos;, revision: &apos;a88d25fe6b&apos;, time: &apos;2017-08-29T12:42:44.417Z&apos;
+System info: host: &apos;LAPTOP-FFQ1AJ6B&apos;, ip: &apos;192.168.184.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_131&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:347)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:255)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:138)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:175)
+	at base.CommonAPI.get_Cloud_Driver(CommonAPI.java:111)
+	at base.CommonAPI.setUp(CommonAPI.java:46)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-WellsFargo-class-passed -->
+          </div> <!-- suite-WellsFargo-class-skipped -->
         </div> <!-- panel WellsFargo -->
         <div panel-name="test-xml-WellsFargo" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -141,20 +157,17 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;WellsFargo&quot; parallel=&quot;tests&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;WellsFargo&quot;&gt;
   &lt;test name=&quot;WellsFargoFeatures&quot;&gt;
-    &lt;parameter name=&quot;useCloudEnv&quot; value=&quot;false&quot;/&gt;
-    &lt;parameter name=&quot;directoryPath&quot; value=&quot;C:\Users\sujon\IdeaProjects\AutomationFrameworkGroupTwo\WellsFargo\screenshots&quot;/&gt;
+    &lt;parameter name=&quot;useCloudEnv&quot; value=&quot;true&quot;/&gt;
     &lt;parameter name=&quot;platformVersion&quot; value=&quot;10&quot;/&gt;
     &lt;parameter name=&quot;browserVersion&quot; value=&quot;61.0&quot;/&gt;
-    &lt;parameter name=&quot;pathForReports&quot; value=&quot;C:\Users\sujon\IdeaProjects\AutomationFrameworkGroupTwo\WellsFargo\reports\TESTREPORT&quot;/&gt;
-    &lt;parameter name=&quot;browserName&quot; value=&quot;Chrome&quot;/&gt;
-    &lt;parameter name=&quot;cloudEnvName&quot; value=&quot;saucelabs&quot;/&gt;
+    &lt;parameter name=&quot;browserName&quot; value=&quot;chrome&quot;/&gt;
+    &lt;parameter name=&quot;cloudEnvName&quot; value=&quot;Saucelabs&quot;/&gt;
     &lt;parameter name=&quot;platform&quot; value=&quot;Win&quot;/&gt;
     &lt;parameter name=&quot;url&quot; value=&quot;https://www.wellsfargo.com/&quot;/&gt;
-    &lt;parameter name=&quot;testName&quot; value=&quot;WellsFargo Automation&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Test_Check_Box.Test_CHeckBox&quot;/&gt;
+      &lt;class name=&quot;TestCase.sBusiness&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- WellsFargoFeatures --&gt;
 &lt;/suite&gt; &lt;!-- WellsFargo --&gt;
@@ -196,14 +209,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Check_Box_example')
-data.setCell(0, 2, 'Test_Check_Box.Test_CHeckBox')
-data.setCell(0, 3, 5408);
+data.setCell(0, 1, 'SmallBusiness')
+data.setCell(0, 2, 'TestCase.sBusiness')
+data.setCell(0, 3, 0);
 window.suiteTableData['WellsFargo']= { tableData: data, tableDiv: 'times-div-WellsFargo'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 0 ms</span>
               <div id="times-div-WellsFargo">
               </div> <!-- times-div-WellsFargo -->
             </div> <!-- times-div -->
@@ -229,19 +242,13 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Test_Check_Box.Test_CHeckBox</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">TestCase.sBusiness</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setUp(false, saucelabs, Win, 10, Chrome, 61.0, https://www.wellsfargo.com/, C:\Users\sujon\IdeaProjects\Au...)</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">setUp(true, Saucelabs, Win, 10, chrome, 61.0, https://www.wellsfargo.com/, null, null)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">Check_Box_example</span>
-                <span class="method-start">8479 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">close_Browser([TestResult name=Check_Box_example status=SUCCESS method=Test_CHeckBox.Check_Box_example()[pri:0, in...)</span>
-                <span class="method-start">13888 ms</span>
-              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
