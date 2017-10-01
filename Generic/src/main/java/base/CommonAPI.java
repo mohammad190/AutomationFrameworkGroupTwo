@@ -38,13 +38,14 @@ public class CommonAPI {
     public void setUp(@Optional boolean useCloudEnv,@Optional String cloudEnvName,@Optional String platform,@Optional String platformVersion,
                       @Optional String browserName, @Optional String browserVersion,
                       @Optional String url, @Optional String pathForReports, @Optional String testName) throws Exception {
+
         if (useCloudEnv == true) {
             if(cloudEnvName.equalsIgnoreCase("Browserstack")) {
                 get_Cloud_Driver(cloudEnvName, browserstack_username, browserstack_accesskey, platform, platformVersion, browserName, browserVersion);
             } else if (cloudEnvName.equalsIgnoreCase("Saucelabs")) {
                 get_Cloud_Driver(cloudEnvName, saucelabs_username, saucelabs_accesskey, platform, platformVersion, browserName, browserVersion);
             }
-        } else{
+        } else {
             report = ExtentFactory.getInstance(pathForReports);
             test = report.startTest(testName);
             get_Local_Driver(platform, browserName);
@@ -95,7 +96,6 @@ public class CommonAPI {
             }
             return driver;
         }
-
 
     public WebDriver get_Cloud_Driver(String cloudEnvName, String envUsername, String envAccessKey, String platform,
                                       String platformVersion, String browserName, String browserVersion) throws Exception {
