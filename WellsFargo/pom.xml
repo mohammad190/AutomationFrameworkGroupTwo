@@ -42,7 +42,6 @@
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>target/test-classes/TestRunner.xml</suiteXmlFile>
-
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

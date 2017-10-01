@@ -59,10 +59,5 @@ public class Todayes_Rates extends CommonAPI {
         Thread.sleep(300);
 
 
-
-
-
-
-
     }
 }

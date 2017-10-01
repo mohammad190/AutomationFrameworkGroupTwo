@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 15.076 sec <<< FAILURE! - in TestSuite
+Check_Box_example(Test_Check_Box.Test_CHeckBox)  Time elapsed: 4.753 sec  <<< FAILURE!
+java.lang.NoSuchMethodError: Check_Box.Atm_Loaction_check_Box.takeScreenShot(Lorg/openqa/selenium/WebDriver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+	at Test_Check_Box.Test_CHeckBox.Check_Box_example(Test_CHeckBox.java:16)
+
