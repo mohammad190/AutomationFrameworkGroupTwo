@@ -11,11 +11,11 @@
 
     <test name="wiki Test">
         <classes>
-            <!--<class name="testWikipedia.TestWikiHome"/>-->
-            <!--<class name="testWikipedia.testWikiSearchOption"/>-->
+            <class name="testWikipedia.TestWikiHome"/>
+            <class name="testWikipedia.testWikiSearchOption"/>
             <class name="testWikipedia.TestWikiMainPage"/>
-            <!--<class name="testWikipedia.testWikiCreateAccount"/>-->
-            <!--<class name="testWikipedia.testWikiLoginPage"/>-->
+            <class name="testWikipedia.testWikiCreateAccount"/>
+            <class name="testWikipedia.testWikiLoginPage"/>
         </classes>
     </test>
 </suite>

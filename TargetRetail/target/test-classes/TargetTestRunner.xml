@@ -11,8 +11,8 @@
     <test name="Targets Test">
         <classes>
             <class name="testTargetRetail.testHomePage"/>
-            <!--<class name="testTargetRetail.testSigninPage"/>-->
-            <!--<class name="testTargetRetail.testCreateAccount"/>-->
+            <class name="testTargetRetail.testSigninPage"/>
+            <class name="testTargetRetail.testCreateAccount"/>
         </classes>
     </test>
 </suite>

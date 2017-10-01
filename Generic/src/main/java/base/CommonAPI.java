@@ -30,7 +30,7 @@ public class CommonAPI {
 
     private String saucelabs_username = "";
     private String saucelabs_accesskey = "";
-    private String browserstack_username = "ibrahimkhan1";
+    private String browserstack_username = "sayem991";
     private String browserstack_accesskey = "p3yyfzCAhLyz92aajAAK";
 
 
