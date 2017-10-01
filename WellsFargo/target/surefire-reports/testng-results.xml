@@ -1,11 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="WellsFargo" duration-ms="4" started-at="2017-10-01T15:11:01Z" finished-at="2017-10-01T15:11:01Z">
+  <suite name="WellsFargo" duration-ms="15313" started-at="2017-10-01T15:23:03Z" finished-at="2017-10-01T15:23:19Z">
     <groups>
     </groups>
-    <test name="WellsFargoFeatures" duration-ms="4" started-at="2017-10-01T15:11:01Z" finished-at="2017-10-01T15:11:01Z">
+    <test name="WellsFargoFeatures" duration-ms="15313" started-at="2017-10-01T15:23:03Z" finished-at="2017-10-01T15:23:19Z">
+      <class name="Test_Check_Box.Test_CHeckBox">
+        <test-method status="PASS" signature="setUp(boolean, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Test_Check_Box.Test_CHeckBox@5a61f5df]" name="setUp" is-config="true" duration-ms="8478" started-at="2017-10-01T11:23:03Z" finished-at="2017-10-01T11:23:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[saucelabs]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Win]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[61.0]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[https://www.wellsfargo.com/]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[C:\Users\sujon\IdeaProjects\AutomationFrameworkGroupTwo\WellsFargo\reports\TESTREPORT]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[WellsFargo Automation]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="Check_Box_example()[pri:0, instance:Test_Check_Box.Test_CHeckBox@5a61f5df]" name="Check_Box_example" duration-ms="5408" started-at="2017-10-01T11:23:12Z" finished-at="2017-10-01T11:23:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Check_Box_example -->
+        <test-method status="PASS" signature="close_Browser(org.testng.ITestResult, java.lang.String)[pri:0, instance:Test_Check_Box.Test_CHeckBox@5a61f5df]" name="close_Browser" is-config="true" duration-ms="1405" started-at="2017-10-01T11:23:17Z" finished-at="2017-10-01T11:23:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Check_Box_example status=SUCCESS method=Test_CHeckBox.Check_Box_example()[pri:0, instance:Test_Check_Box.Test_CHeckBox@5a61f5df] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:\Users\sujon\IdeaProjects\AutomationFrameworkGroupTwo\WellsFargo\screenshots]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close_Browser -->
+      </class> <!-- Test_Check_Box.Test_CHeckBox -->
     </test> <!-- WellsFargoFeatures -->
   </suite> <!-- WellsFargo -->
 </testng-results>

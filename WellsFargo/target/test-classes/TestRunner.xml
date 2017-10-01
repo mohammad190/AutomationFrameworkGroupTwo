@@ -29,7 +29,7 @@
             <!--<class name="TestCase.Test_Bank_Twitter"></class>-->
             <!--<class name="Insurance_Package.Test_insurance_features"></class>-->
             <!--<class name="TestCase.Test_Search_option"></class>-->
-            <!--<class name="Test_Check_Box.Test_CHeckBox"></class>-->
+            <class name="Test_Check_Box.Test_CHeckBox"></class>
             <!--<class name="Test_FAQ_s.Test_frequently_ask_question_Features"></class>-->
             <!--<class name="Test_DropDown_Bank.Test_DropDown_Features"></class>-->
             <!--<class name="TestUserNameAndPassword.TestUserNameAndPasswordFeature"></class>-->
