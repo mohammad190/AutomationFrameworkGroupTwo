@@ -2,8 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Amazon Automation" parallel="tests">
 
-    <parameter name="useCloudEnv" value="True"/>
-    <parameter name="cloudEnvName" value="Saucelabs"/>
+    <parameter name="useCloudEnv" value="true"/>
+    <parameter name="cloudEnvName" value="browserstack"/>
     <parameter name="OS" value="Win"/>
     <parameter name="OS_Version" value="10"/>
     <parameter name="browser" value="Chrome"/>
