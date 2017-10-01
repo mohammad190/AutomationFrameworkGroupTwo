@@ -32,7 +32,7 @@ public class CommonAPI {
     private String saucelabs_accesskey = "580ce2de-5196-415d-9486-721c3640de74";
     private String browserstack_username = "sayem991";
     private String browserstack_accesskey = "p3yyfzCAhLyz92aajAAK";
-    
+
     @Parameters({"useCloudEnv", "cloudEnvName", "platform", "platformVersion", "browserName", "browserVersion" , "url", "pathForReports", "testName"})
     @BeforeMethod
     public void setUp(@Optional boolean useCloudEnv,@Optional String cloudEnvName,@Optional String platform,@Optional String platformVersion,
@@ -46,16 +46,16 @@ public class CommonAPI {
                 get_Cloud_Driver(cloudEnvName, saucelabs_username, saucelabs_accesskey, platform, platformVersion, browserName, browserVersion);
             }
         } else {
+            get_Local_Driver(platform, browserName);
+        }
             report = ExtentFactory.getInstance(pathForReports);
             test = report.startTest(testName);
-            get_Local_Driver(platform, browserName);
             driver.manage().window().maximize();
             test.log(LogStatus.INFO, "Browser Maximized.");
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
             driver.navigate().to(url);
             test.log(LogStatus.INFO, "Web Application Opened.");
-        }
     }
 
     public WebDriver get_Local_Driver(String platform, String browserName) {
