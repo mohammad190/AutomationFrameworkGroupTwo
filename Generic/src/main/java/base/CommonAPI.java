@@ -28,8 +28,8 @@ public class CommonAPI {
 
     public static WebDriver driver;
 
-    private String saucelabs_username = "ibrahimkhan1994";
-    private String saucelabs_accesskey = "580ce2de-5196-415d-9486-721c3640de74";
+    private String saucelabs_username = "mohammad190";
+    private String saucelabs_accesskey = "24c18e2c-cc49-4321-8ec9-ed35e675fb6d";
     private String browserstack_username = "sayem991";
     private String browserstack_accesskey = "p3yyfzCAhLyz92aajAAK";
 
@@ -64,34 +64,34 @@ public class CommonAPI {
             if (browserName.equalsIgnoreCase("Firefox")) {
                 System.setProperty("webdriver.gecko.driver", "../Generic/macdriver/geckodriver");
                 driver = new FirefoxDriver();
-                test.log(LogStatus.INFO, "Firefox Driver For Mac Executed.");
+                //test.log(LogStatus.INFO, "Firefox Driver For Mac Executed.");
             } else if (browserName.equalsIgnoreCase("Chrome")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/macdriver/chromedriver");
                 driver = new ChromeDriver();
-                test.log(LogStatus.INFO, "Chrome Driver For Mac Executed.");
+                //test.log(LogStatus.INFO, "Chrome Driver For Mac Executed.");
             } else {
                 System.err.println("ERROR: Choose from: Firefox/Chrome.");
             }
-        } else if (platform.equalsIgnoreCase("Win")) {
+        } else if (platform.contains("Win")) {
             if (browserName.equalsIgnoreCase("Firefox")) {
                 System.setProperty("webdriver.gecko.driver", "../Generic/driver/geckodriver.exe");
                 driver = new FirefoxDriver();
-                test.log(LogStatus.INFO, "Firefox Driver For Windows Executed.");
+                //test.log(LogStatus.INFO, "Firefox Driver For Windows Executed.");
             } else if (browserName.equalsIgnoreCase("Chrome")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/driver/chromedriver.exe");
                 driver = new ChromeDriver();
-                test.log(LogStatus.INFO, "Chrome Driver For Windows Executed.");
+                //test.log(LogStatus.INFO, "Chrome Driver For Windows Executed.");
             } else if (browserName.equalsIgnoreCase("IE")) {
                 System.setProperty("webdriver.IE.driver", "../Generic/driver/IEDriverServer.exe");
                 driver = new InternetExplorerDriver();
-                test.log(LogStatus.INFO, "InternetExplorer Driver For Windows Executed.");
+                //test.log(LogStatus.INFO, "InternetExplorer Driver For Windows Executed.");
             } else if (browserName.equalsIgnoreCase("Opera")) {
                 System.setProperty("webdriver.opera.driver", "../Generic/driver/operadriver.exe");
                 driver = new OperaDriver();
-                test.log(LogStatus.INFO, "Opera Driver For Windows Executed.");
+                //test.log(LogStatus.INFO, "Opera Driver For Windows Executed.");
             } else {
                 System.err.println("ERROR: Choose from: Firefox/Chrome/IE/Opera.");
-                test.log(LogStatus.INFO, "Invalid Choice Of Driver.");
+                //test.log(LogStatus.INFO, "Invalid Choice Of Driver.");
                 }
             }
             return driver;

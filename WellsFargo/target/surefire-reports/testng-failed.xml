@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [WellsFargo]">
+  <test name="WellsFargoFeatures(failed)">
+    <parameter name="useCloudEnv" value="true"/>
+    <parameter name="platformVersion" value="10"/>
+    <parameter name="browserVersion" value="61.0"/>
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="cloudEnvName" value="Saucelabs"/>
+    <parameter name="platform" value="Win"/>
+    <parameter name="url" value="https://www.wellsfargo.com/"/>
+    <classes>
+      <class name="TestCase.sBusiness">
+        <methods>
+          <include name="SmallBusiness"/>
+          <include name="close_Browser"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- TestCase.sBusiness -->
+    </classes>
+  </test> <!-- WellsFargoFeatures(failed) -->
+</suite> <!-- Failed suite [WellsFargo] -->
