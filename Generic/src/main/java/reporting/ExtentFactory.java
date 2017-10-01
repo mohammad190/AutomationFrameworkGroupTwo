@@ -4,9 +4,9 @@ import com.relevantcodes.extentreports.ExtentReports;
 
 public class ExtentFactory {
 
-    public static ExtentReports getInstance(String reportFileName) {
+    public static ExtentReports getInstance(String pathForReports) {
         ExtentReports extent;
-        String Path = reportFileName + ".html";
+        String Path = pathForReports + ".html";
         extent = new ExtentReports(Path, true);
         extent.addSystemInfo("Host", "Ibrahim Khan").addSystemInfo("Environment", "QA")
                 .addSystemInfo("Framework" , "Hybrid");

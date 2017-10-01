@@ -3,16 +3,16 @@
 <suite name="Target Automation Test" parallel="false">
     <parameter name="useCloudEnv" value="false"/>
     <parameter name="cloudEnvName" value="Browserstack"/>
-    <parameter name="OS" value="Win"/>
-    <parameter name="OS_Version" value="8"/>
-    <parameter name="browser" value="Chrome"/>
-    <parameter name="Browser_Version" value="53.0"/>
+    <parameter name="platform" value="Win"/>
+    <parameter name="platformVersion" value="8"/>
+    <parameter name="browserName" value="Chrome"/>
+    <parameter name="browserVersion" value="53.0"/>
     <parameter name="url" value="https://www.target.com/"/>
     <test name="Targets Test">
         <classes>
-            <class name="testTargetRetail.testHomePage"/>
-            <class name="testTargetRetail.testSigninPage"/>
-            <class name="testTargetRetail.testCreateAccount"/>
+            <!--<class name="testTargetRetail.testHomePage"/>-->
+            <!--<class name="testTargetRetail.testSigninPage"/>-->
+            <!--<class name="testTargetRetail.testCreateAccount"/>-->
         </classes>
     </test>
 </suite>

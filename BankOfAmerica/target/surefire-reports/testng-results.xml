@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="BankOfAmerica Automation" duration-ms="4" started-at="2017-10-01T15:09:49Z" finished-at="2017-10-01T15:09:49Z">
+    <groups>
+    </groups>
+    <test name="BankOfAmerica Automation" duration-ms="4" started-at="2017-10-01T15:09:49Z" finished-at="2017-10-01T15:09:49Z">
+    </test> <!-- BankOfAmerica Automation -->
+  </suite> <!-- BankOfAmerica Automation -->
+</testng-results>

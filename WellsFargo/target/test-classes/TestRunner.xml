@@ -4,16 +4,16 @@
 
     <test name="WellsFargoFeatures">
         <parameter name="useCloudEnv" value="false"/>
-        <parameter name="cloudEnvName" value="browserstack"/>
-        <parameter name="OS" value="Win"/>
-        <parameter name="OS_Version" value=""/>
-        <parameter name="browser" value="chrome"/>
-        <parameter name="Browser_Version" value="53.0"/>
+        <parameter name="cloudEnvName" value="saucelabs"/>
+        <parameter name="platform" value="Win"/>
+        <parameter name="platformVersion" value="10"/>
+        <parameter name="browserName" value="Chrome"/>
+        <parameter name="browserVersion" value="61.0"/>
         <parameter name="directoryPath" value="C:\Users\sujon\IdeaProjects\AutomationFrameworkGroupTwo\WellsFargo\screenshots"/>
         <parameter name="url" value="https://www.wellsfargo.com/"/>
 
         <!-- For Automatically Generated Reports In 'Reports' Folder-->
-        <parameter name="reportFileName" value="C:\Users\sujon\IdeaProjects\AutomationFrameworkGroupTwo\WellsFargo\reports\TESTREPORT"/>
+        <parameter name="pathForReports" value="C:\Users\sujon\IdeaProjects\AutomationFrameworkGroupTwo\WellsFargo\reports\TESTREPORT"/>
         <parameter name="testName" value="WellsFargo Automation"/>
 
         <classes>
@@ -29,7 +29,7 @@
             <!--<class name="TestCase.Test_Bank_Twitter"></class>-->
             <!--<class name="Insurance_Package.Test_insurance_features"></class>-->
             <!--<class name="TestCase.Test_Search_option"></class>-->
-            <class name="Test_Check_Box.Test_CHeckBox"></class>
+            <!--<class name="Test_Check_Box.Test_CHeckBox"></class>-->
             <!--<class name="Test_FAQ_s.Test_frequently_ask_question_Features"></class>-->
             <!--<class name="Test_DropDown_Bank.Test_DropDown_Features"></class>-->
             <!--<class name="TestUserNameAndPassword.TestUserNameAndPasswordFeature"></class>-->
