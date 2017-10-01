@@ -28,8 +28,8 @@ public class CommonAPI {
 
     public static WebDriver driver;
 
-    private String saucelabs_username = "mohammad190";
-    private String saucelabs_accesskey = "24c18e2c-cc49-4321-8ec9-ed35e675fb6d";
+    private String saucelabs_username = "ibrahimkhan1994";
+    private String saucelabs_accesskey = "580ce2de-5196-415d-9486-721c3640de74";
     private String browserstack_username = "sayem991";
     private String browserstack_accesskey = "p3yyfzCAhLyz92aajAAK";
 
@@ -41,15 +41,13 @@ public class CommonAPI {
 
         if (useCloudEnv == true) {
             if(cloudEnvName.equalsIgnoreCase("Browserstack")) {
-                get_Cloud_Driver(cloudEnvName, browserstack_username, browserstack_accesskey, platform, platformVersion, browserName, browserVersion);
+                get_Cloud_Driver(cloudEnvName, browserstack_username, browserstack_accesskey, platform, platformVersion, browserName, browserVersion, pathForReports, testName);
             } else if (cloudEnvName.equalsIgnoreCase("Saucelabs")) {
-                get_Cloud_Driver(cloudEnvName, saucelabs_username, saucelabs_accesskey, platform, platformVersion, browserName, browserVersion);
+                get_Cloud_Driver(cloudEnvName, saucelabs_username, saucelabs_accesskey, platform, platformVersion, browserName, browserVersion, pathForReports, testName);
             }
         } else {
-            get_Local_Driver(platform, browserName);
+            get_Local_Driver(platform, browserName, pathForReports, testName);
         }
-            report = ExtentFactory.getInstance(pathForReports);
-            test = report.startTest(testName);
             driver.manage().window().maximize();
             test.log(LogStatus.INFO, "Browser Maximized.");
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -58,17 +56,20 @@ public class CommonAPI {
             test.log(LogStatus.INFO, "Web Application Opened.");
     }
 
-    public WebDriver get_Local_Driver(String platform, String browserName) {
+    public WebDriver get_Local_Driver(String platform, String browserName, String pathForReports, String testName) {
+
+        report = ExtentFactory.getInstance(pathForReports);
+        test = report.startTest(testName);
 
         if (platform.contains("macOS")) {
             if (browserName.equalsIgnoreCase("Firefox")) {
                 System.setProperty("webdriver.gecko.driver", "../Generic/macdriver/geckodriver");
                 driver = new FirefoxDriver();
-                //test.log(LogStatus.INFO, "Firefox Driver For Mac Executed.");
+                test.log(LogStatus.INFO, "Firefox Driver For Mac Executed.");
             } else if (browserName.equalsIgnoreCase("Chrome")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/macdriver/chromedriver");
                 driver = new ChromeDriver();
-                //test.log(LogStatus.INFO, "Chrome Driver For Mac Executed.");
+                test.log(LogStatus.INFO, "Chrome Driver For Mac Executed.");
             } else {
                 System.err.println("ERROR: Choose from: Firefox/Chrome.");
             }
@@ -76,29 +77,33 @@ public class CommonAPI {
             if (browserName.equalsIgnoreCase("Firefox")) {
                 System.setProperty("webdriver.gecko.driver", "../Generic/driver/geckodriver.exe");
                 driver = new FirefoxDriver();
-                //test.log(LogStatus.INFO, "Firefox Driver For Windows Executed.");
+                test.log(LogStatus.INFO, "Firefox Driver For Windows Executed.");
             } else if (browserName.equalsIgnoreCase("Chrome")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/driver/chromedriver.exe");
                 driver = new ChromeDriver();
-                //test.log(LogStatus.INFO, "Chrome Driver For Windows Executed.");
+                test.log(LogStatus.INFO, "Chrome Driver For Windows Executed.");
             } else if (browserName.equalsIgnoreCase("IE")) {
                 System.setProperty("webdriver.IE.driver", "../Generic/driver/IEDriverServer.exe");
                 driver = new InternetExplorerDriver();
-                //test.log(LogStatus.INFO, "InternetExplorer Driver For Windows Executed.");
+                test.log(LogStatus.INFO, "InternetExplorer Driver For Windows Executed.");
             } else if (browserName.equalsIgnoreCase("Opera")) {
                 System.setProperty("webdriver.opera.driver", "../Generic/driver/operadriver.exe");
                 driver = new OperaDriver();
-                //test.log(LogStatus.INFO, "Opera Driver For Windows Executed.");
+                test.log(LogStatus.INFO, "Opera Driver For Windows Executed.");
             } else {
                 System.err.println("ERROR: Choose from: Firefox/Chrome/IE/Opera.");
-                //test.log(LogStatus.INFO, "Invalid Choice Of Driver.");
+                test.log(LogStatus.INFO, "Invalid Choice Of Driver.");
                 }
             }
             return driver;
         }
 
     public WebDriver get_Cloud_Driver(String cloudEnvName, String envUsername, String envAccessKey, String platform,
-                                      String platformVersion, String browserName, String browserVersion) throws Exception {
+                                      String platformVersion, String browserName, String browserVersion,
+                                      String pathForReports, String testName) throws Exception {
+
+        report = ExtentFactory.getInstance(pathForReports);
+        test = report.startTest(testName);
 
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability("browserName", browserName);
