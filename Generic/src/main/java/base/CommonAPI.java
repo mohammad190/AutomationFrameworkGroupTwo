@@ -34,7 +34,7 @@ public class CommonAPI {
     private String browserstack_accesskey = "p3yyfzCAhLyz92aajAAK";
 
 
-    @Parameters({"useCloudEnv", "cloudEnvName", "platform", "platformVersion", "browserName", "browserVersion" , "url", "reportFileName", "testName"})
+    @Parameters({"useCloudEnv", "cloudEnvName", "platform", "platformVersion", "browserName", "browserVersion" , "url", "pathForReports", "testName"})
     @BeforeMethod
     public void setUp(@Optional boolean useCloudEnv,@Optional String cloudEnvName,@Optional String platform,@Optional String platformVersion,
                       @Optional String browserName, @Optional String browserVersion,
