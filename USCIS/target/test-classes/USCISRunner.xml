@@ -2,17 +2,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name = "USCIS Automation" parallel="tests">
 
-    <parameter name="useCloudEnv" value="true"/>
+    <parameter name="useCloudEnv" value="false"/>
     <parameter name="cloudEnvName" value="Saucelabs"/>
     <parameter name="platform" value="macOS 10.12"/>
     <parameter name="platformVersion" value="8"/>
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="53.0"/>
     <parameter name="url" value="https://www.uscis.gov/"/>
-    <parameter name="reportFileName" value="/Users/ibrahimkhan/IdeaProjects/AutomationFrameworkGroupTwo/USCIS/reports/TestCases"/>
+
+    <!-- For Extent Reporting -->
+    <parameter name="pathForReports" value="/Users/ibrahimkhan/IdeaProjects/AutomationFrameworkGroupTwo/USCIS/reports/TestCases"/>
     <parameter name="testName" value="USCIS Automation"/>
 
-    <!-- For ScreenShot, AfterMethod -->
+    <!-- For ScreenShot, [AfterMethod] -->
     <parameter name="directoryPath" value="/Users/ibrahimkhan/IdeaProjects/AutomationFrameworkGroupTwo/USCIS/screenshots/"/>
 
     <test name="USCIS Automation">

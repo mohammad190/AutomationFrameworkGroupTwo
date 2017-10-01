@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="15.076" tests="1" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="0.861" tests="0" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2017.2.2"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -61,14 +61,4 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="Check_Box_example" classname="Test_Check_Box.Test_CHeckBox" time="4.753">
-    <failure message="Check_Box.Atm_Loaction_check_Box.takeScreenShot(Lorg/openqa/selenium/WebDriver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" type="java.lang.NoSuchMethodError">java.lang.NoSuchMethodError: Check_Box.Atm_Loaction_check_Box.takeScreenShot(Lorg/openqa/selenium/WebDriver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-	at Test_Check_Box.Test_CHeckBox.Check_Box_example(Test_CHeckBox.java:16)
-</failure>
-    <system-err><![CDATA[Starting ChromeDriver 2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a) on port 33271
-Only local connections are allowed.
-Sep 30, 2017 8:16:58 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-]]></system-err>
-  </testcase>
 </testsuite>
