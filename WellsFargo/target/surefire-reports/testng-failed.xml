@@ -2,21 +2,31 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [WellsFargo]">
   <test name="WellsFargoFeatures(failed)">
-    <parameter name="useCloudEnv" value="true"/>
-    <parameter name="platformVersion" value="10"/>
+    <parameter name="useCloudEnv" value="false"/>
+    <parameter name="directoryPath" value="C:\Users\sujon\IdeaProjects\AutomationFrameworkGroupTwo\WellsFargo\screenshots"/>
+    <parameter name="platformVersion" value=""/>
     <parameter name="browserVersion" value="61.0"/>
+    <parameter name="pathForReports" value="C:\Users\sujon\IdeaProjects\AutomationFrameworkGroupTwo\WellsFargo\reports\TESTREPORT"/>
     <parameter name="browserName" value="chrome"/>
     <parameter name="cloudEnvName" value="Saucelabs"/>
-    <parameter name="platform" value="Win"/>
+    <parameter name="platform" value="Windows 10"/>
     <parameter name="url" value="https://www.wellsfargo.com/"/>
+    <parameter name="testName" value="WellsFargo Automation"/>
     <classes>
-      <class name="TestCase.sBusiness">
+      <class name="Test_FAQ_s.Test_frequently_ask_question_Features">
         <methods>
-          <include name="SmallBusiness"/>
           <include name="close_Browser"/>
           <include name="setUp"/>
+          <include name="Features_FAQ_s"/>
         </methods>
-      </class> <!-- TestCase.sBusiness -->
+      </class> <!-- Test_FAQ_s.Test_frequently_ask_question_Features -->
+      <class name="Test_Check_Box.Test_CHeckBox">
+        <methods>
+          <include name="close_Browser"/>
+          <include name="Check_Box_example"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- Test_Check_Box.Test_CHeckBox -->
     </classes>
   </test> <!-- WellsFargoFeatures(failed) -->
 </suite> <!-- Failed suite [WellsFargo] -->

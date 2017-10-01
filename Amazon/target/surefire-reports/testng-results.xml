@@ -2,10 +2,10 @@
 <testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Amazon Automation" duration-ms="4" started-at="2017-10-01T15:09:26Z" finished-at="2017-10-01T15:09:26Z">
+  <suite name="Amazon Automation" duration-ms="0" started-at="2017-10-01T22:56:02Z" finished-at="2017-10-01T22:56:02Z">
     <groups>
     </groups>
-    <test name="testName" duration-ms="4" started-at="2017-10-01T15:09:26Z" finished-at="2017-10-01T15:09:26Z">
+    <test name="testName" duration-ms="0" started-at="2017-10-01T22:56:02Z" finished-at="2017-10-01T22:56:02Z">
     </test> <!-- testName -->
   </suite> <!-- Amazon Automation -->
 </testng-results>

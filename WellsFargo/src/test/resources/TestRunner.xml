@@ -3,7 +3,7 @@
 <suite name="WellsFargo" parallel="false">
 
     <test name="WellsFargoFeatures">
-        <parameter name="useCloudEnv" value="true"/>
+        <parameter name="useCloudEnv" value="false"/>
         <parameter name="cloudEnvName" value="Saucelabs"/>
         <parameter name="platform" value="Windows 10"/>
         <parameter name="platformVersion" value=""/>
@@ -17,7 +17,7 @@
         <parameter name="testName" value="WellsFargo Automation"/>
 
         <classes>
-            <class name="TestCase.sBusiness"/>
+            <!--<class name="TestCase.sBusiness"/>-->
             <!--<class name="TestCase.TestWellsFago"></class>-->
             <!--<class name="TestCase.Test_banking"></class>-->
             <!--<class name="TestCase.Test_Commercial"></class>-->
@@ -30,7 +30,7 @@
             <!--<class name="Insurance_Package.Test_insurance_features"></class>-->
             <!--<class name="TestCase.Test_Search_option"></class>-->
             <class name="Test_Check_Box.Test_CHeckBox"/>
-            <!--<class name="Test_FAQ_s.Test_frequently_ask_question_Features"></class>-->
+            <class name="Test_FAQ_s.Test_frequently_ask_question_Features"></class>
             <!--<class name="Test_DropDown_Bank.Test_DropDown_Features"></class>-->
             <!--<class name="TestUserNameAndPassword.TestUserNameAndPasswordFeature"></class>-->
             <!--<class name="TestMovingFeatures.TestMovingHomePage"></class>-->
