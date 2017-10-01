@@ -5,9 +5,9 @@
     <parameter name="useCloudEnv" value="true"/>
     <parameter name="cloudEnvName" value="Saucelabs"/>
     <parameter name="platform" value="macOS 10.12"/>
-    <parameter name="OS_Version" value="8"/>
-    <parameter name="Browser_Version" value="55.0"/>
-    <parameter name="browserName" value="firefox"/>
+    <parameter name="platformVersion" value="8"/>
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="browserVersion" value="53.0"/>
     <parameter name="url" value="https://www.uscis.gov/"/>
     <parameter name="reportFileName" value="/Users/ibrahimkhan/IdeaProjects/AutomationFrameworkGroupTwo/USCIS/reports/TestCases"/>
     <parameter name="testName" value="USCIS Automation"/>

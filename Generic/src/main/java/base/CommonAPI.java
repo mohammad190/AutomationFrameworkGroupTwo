@@ -34,19 +34,19 @@ public class CommonAPI {
     private String browserstack_accesskey = "p3yyfzCAhLyz92aajAAK";
 
 
-    @Parameters({"useCloudEnv", "cloudEnvName", "platform", "OS_Version", "Browser_Version", "browserName","url", "reportFileName", "testName"})
+    @Parameters({"useCloudEnv", "cloudEnvName", "platform", "platformVersion", "browserName", "browserVersion" , "url", "reportFileName", "testName"})
     @BeforeMethod
-    public void setUp(@Optional boolean useCloudEnv,@Optional String cloudEnvName,@Optional String platform,@Optional String OS_Version,
-                      @Optional String Browser_Version, @Optional String browserName,
-                      @Optional String url, @Optional String reportFileName, @Optional String testName) throws Exception {
+    public void setUp(@Optional boolean useCloudEnv,@Optional String cloudEnvName,@Optional String platform,@Optional String platformVersion,
+                      @Optional String browserName, @Optional String browserVersion,
+                      @Optional String url, @Optional String pathForReports, @Optional String testName) throws Exception {
         if (useCloudEnv == true) {
             if(cloudEnvName.equalsIgnoreCase("Browserstack")) {
-                get_Cloud_Driver(cloudEnvName, browserstack_username, browserstack_accesskey, platform, OS_Version, browserName, Browser_Version);
+                get_Cloud_Driver(cloudEnvName, browserstack_username, browserstack_accesskey, platform, platformVersion, browserName, browserVersion);
             } else if (cloudEnvName.equalsIgnoreCase("Saucelabs")) {
-                get_Cloud_Driver(cloudEnvName, saucelabs_username, saucelabs_accesskey, platform, OS_Version, browserName, Browser_Version);
+                get_Cloud_Driver(cloudEnvName, saucelabs_username, saucelabs_accesskey, platform, platformVersion, browserName, browserVersion);
             }
         } else{
-            report = ExtentFactory.getInstance(reportFileName);
+            report = ExtentFactory.getInstance(pathForReports);
             test = report.startTest(testName);
             get_Local_Driver(platform, browserName);
             driver.manage().window().maximize();
@@ -99,13 +99,13 @@ public class CommonAPI {
 
 
     public WebDriver get_Cloud_Driver(String cloudEnvName, String envUsername, String envAccessKey, String platform,
-                                      String OS_Version, String browserName, String Browser_Version) throws Exception {
+                                      String platformVersion, String browserName, String browserVersion) throws Exception {
 
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability("browserName", browserName);
-        cap.setCapability("Browser_Version", Browser_Version);
+        cap.setCapability("browserVersion", browserVersion);
         cap.setCapability("platform", platform);
-        cap.setCapability("OS_Version", OS_Version);
+        cap.setCapability("platformVersion", platformVersion);
 
         if(cloudEnvName.equalsIgnoreCase("Saucelabs")) {
             driver = new RemoteWebDriver(new URL
