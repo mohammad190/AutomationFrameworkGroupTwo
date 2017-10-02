@@ -2,10 +2,10 @@
 <testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Wikipedia Automation Test" duration-ms="6" started-at="2017-10-01T15:11:20Z" finished-at="2017-10-01T15:11:20Z">
+  <suite name="Wikipedia Automation Test" duration-ms="16" started-at="2017-10-01T22:55:33Z" finished-at="2017-10-01T22:55:33Z">
     <groups>
     </groups>
-    <test name="wiki Test" duration-ms="6" started-at="2017-10-01T15:11:20Z" finished-at="2017-10-01T15:11:20Z">
+    <test name="wiki Test" duration-ms="16" started-at="2017-10-01T22:55:33Z" finished-at="2017-10-01T22:55:33Z">
     </test> <!-- wiki Test -->
   </suite> <!-- Wikipedia Automation Test -->
 </testng-results>

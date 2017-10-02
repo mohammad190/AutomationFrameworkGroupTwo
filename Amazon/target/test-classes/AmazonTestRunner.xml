@@ -2,21 +2,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Amazon Automation" parallel="tests">
 
-<<<<<<< HEAD
-    <parameter name="useCloudEnv" value="false"/>
+    <parameter name="useCloudEnv" value="true"/>
     <parameter name="cloudEnvName" value="browserstack"/>
     <parameter name="platform" value="Win"/>
     <parameter name="platformVersion" value="10"/>
     <parameter name="browserName" value="Chrome"/>
     <parameter name="browserVersion" value="53.0"/>
-=======
-    <parameter name="useCloudEnv" value="True"/>
-    <parameter name="cloudEnvName" value="Saucelabs"/>
-    <parameter name="OS" value="Win"/>
-    <parameter name="OS_Version" value="10"/>
-    <parameter name="browser" value="Chrome"/>
-    <parameter name="Browser_Version" value="53.0"/>
->>>>>>> d9336a4c5805628ea12322087d09a65c1bc85808
     <parameter name="url" value="https://www.amazon.com/"/>
     <parameter name="pathToReports" value="C:\Users\SAYEM\Desktop\SayemJava\AutomationFrameworkGroupTwo\Amazon\reports\testreport"/>
     <parameter name="testName" value="Amazon Automotion Test"/>

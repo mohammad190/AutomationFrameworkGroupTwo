@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">0 methods,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-BankOfAmerica_Automation" class="hide-methods passed suite-BankOfAmerica_Automation"> (hide)</a> <!-- hide-methods passed suite-BankOfAmerica_Automation -->
+                      <a href="#" panel-name="suite-BankOfAmerica_Automation" class="show-methods passed suite-BankOfAmerica_Automation"> (show)</a> <!-- show-methods passed suite-BankOfAmerica_Automation -->
+                    </span>
+                    <div class="method-list-content passed suite-BankOfAmerica_Automation">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-BankOfAmerica_Automation" title="home.TestingBankingFunctionalities" hash-for-method="Test_Mobile_Banking">Test_Mobile_Banking</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-BankOfAmerica_Automation -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -103,6 +117,21 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-BankOfAmerica_Automation" class="panel BankOfAmerica_Automation">
+          <div class="suite-BankOfAmerica_Automation-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">home.TestingBankingFunctionalities</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test_Mobile_Banking">
+                  </a> <!-- Test_Mobile_Banking -->
+                  <span class="method-name">Test_Mobile_Banking</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-BankOfAmerica_Automation-class-passed -->
         </div> <!-- panel BankOfAmerica_Automation -->
         <div panel-name="test-xml-BankOfAmerica_Automation" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -113,14 +142,17 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;BankOfAmerica Automation&quot; parallel=&quot;tests&quot;&gt;
-  &lt;parameter name=&quot;useCloudEnv&quot; value=&quot;false&quot;/&gt;
+  &lt;parameter name=&quot;useCloudEnv&quot; value=&quot;true&quot;/&gt;
   &lt;parameter name=&quot;platformVersion&quot; value=&quot;8&quot;/&gt;
   &lt;parameter name=&quot;browserVersion&quot; value=&quot;53.0&quot;/&gt;
   &lt;parameter name=&quot;browserName&quot; value=&quot;Chrome&quot;/&gt;
-  &lt;parameter name=&quot;cloudEnvName&quot; value=&quot;Browserstack&quot;/&gt;
-  &lt;parameter name=&quot;platform&quot; value=&quot;MacOS&quot;/&gt;
+  &lt;parameter name=&quot;cloudEnvName&quot; value=&quot;Saucelabs&quot;/&gt;
+  &lt;parameter name=&quot;platform&quot; value=&quot;macOS&quot;/&gt;
   &lt;parameter name=&quot;url&quot; value=&quot;https://www.bankofamerica.com/&quot;/&gt;
   &lt;test name=&quot;BankOfAmerica Automation&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;home.TestingBankingFunctionalities&quot;/&gt;
+    &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- BankOfAmerica Automation --&gt;
 &lt;/suite&gt; &lt;!-- BankOfAmerica Automation --&gt;
             </pre>
@@ -133,7 +165,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">BankOfAmerica Automation (0 classes)</span>
+                <span class="test-name">BankOfAmerica Automation (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -159,11 +191,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(0);
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'Test_Mobile_Banking')
+data.setCell(0, 2, 'home.TestingBankingFunctionalities')
+data.setCell(0, 3, 12959);
 window.suiteTableData['BankOfAmerica_Automation']= { tableData: data, tableDiv: 'times-div-BankOfAmerica_Automation'}
 return data;
 }
               </script>
+              <span class="suite-total-time">Total running time: 12 seconds</span>
               <div id="times-div-BankOfAmerica_Automation">
               </div> <!-- times-div-BankOfAmerica_Automation -->
             </div> <!-- times-div -->
@@ -188,6 +225,20 @@ return data;
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">home.TestingBankingFunctionalities</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(true, Saucelabs, macOS, 8, Chrome, 53.0, https://www.bankofamerica.com/, null, null)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Test_Mobile_Banking</span>
+                <span class="method-start">11829 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">close_Browser([TestResult name=Test_Mobile_Banking status=SUCCESS method=TestingBankingFunctionalities.Test_Mobile...)</span>
+                <span class="method-start">24788 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
