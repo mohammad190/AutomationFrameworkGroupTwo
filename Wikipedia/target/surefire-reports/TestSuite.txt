@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 32, Failures: 1, Errors: 0, Skipped: 31, Time elapsed: 1.148 sec <<< FAILURE!
-setUp(testWikipedia.TestWikiHome)  Time elapsed: 0.701 sec  <<< FAILURE!
+Tests run: 32, Failures: 1, Errors: 0, Skipped: 31, Time elapsed: 2.395 sec <<< FAILURE!
+setUp(testWikipedia.TestWikiHome)  Time elapsed: 1.935 sec  <<< FAILURE!
 java.lang.IllegalArgumentException
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)

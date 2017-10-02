@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="32" failures="1" name="TestSuite" time="22.851" errors="0" skipped="31">
+<testsuite tests="32" failures="1" name="TestSuite" time="62.105" errors="0" skipped="31">
   <properties>
     <property name="idea.version" value="2017.2.5"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -62,7 +62,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="0.701">
+  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="1.935">
     <failure type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -105,97 +105,97 @@
     <system-out>Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@67f89fa3
 </system-out>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="testChn" time="0.701">
+  <testcase classname="testWikipedia.TestWikiHome" name="testChn" time="1.936">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="0.702">
+  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="1.936">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="testEng" time="0.702">
+  <testcase classname="testWikipedia.TestWikiHome" name="testEng" time="1.936">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="0.703">
+  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="1.937">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="testEsp" time="0.703">
+  <testcase classname="testWikipedia.TestWikiHome" name="testEsp" time="1.937">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="0.703">
+  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="1.938">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="testFrnch" time="0.703">
+  <testcase classname="testWikipedia.TestWikiHome" name="testFrnch" time="1.938">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="0.704">
+  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="1.938">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="testGrmn" time="0.705">
+  <testcase classname="testWikipedia.TestWikiHome" name="testGrmn" time="1.938">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="0.705">
+  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="1.939">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="testIta" time="0.706">
+  <testcase classname="testWikipedia.TestWikiHome" name="testIta" time="1.939">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="0.708">
+  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="1.939">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="testJpn" time="0.708">
+  <testcase classname="testWikipedia.TestWikiHome" name="testJpn" time="1.939">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="0.711">
+  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="1.94">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="testLangList" time="0.712">
+  <testcase classname="testWikipedia.TestWikiHome" name="testLangList" time="1.94">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="0.713">
+  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="1.94">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="testPol" time="0.713">
+  <testcase classname="testWikipedia.TestWikiHome" name="testPol" time="1.941">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="0.716">
+  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="1.941">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="testPor" time="0.716">
+  <testcase classname="testWikipedia.TestWikiHome" name="testPor" time="1.941">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="0.719">
+  <testcase classname="testWikipedia.TestWikiHome" name="setUp" time="1.942">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiHome" name="testRus" time="0.719">
+  <testcase classname="testWikipedia.TestWikiHome" name="testRus" time="1.942">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiMainPage" name="setUp" time="0.721">
+  <testcase classname="testWikipedia.TestWikiMainPage" name="setUp" time="1.944">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiMainPage" name="createAccountPage" time="0.721">
+  <testcase classname="testWikipedia.TestWikiMainPage" name="createAccountPage" time="1.944">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiMainPage" name="setUp" time="0.721">
+  <testcase classname="testWikipedia.TestWikiMainPage" name="setUp" time="1.945">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiMainPage" name="loginPage" time="0.726">
+  <testcase classname="testWikipedia.TestWikiMainPage" name="loginPage" time="1.945">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiMainPage" name="setUp" time="0.728">
+  <testcase classname="testWikipedia.TestWikiMainPage" name="setUp" time="1.945">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiMainPage" name="searchCont" time="0.728">
+  <testcase classname="testWikipedia.TestWikiMainPage" name="searchCont" time="1.945">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiMainPage" name="setUp" time="0.732">
+  <testcase classname="testWikipedia.TestWikiMainPage" name="setUp" time="1.946">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiMainPage" name="testTalk" time="0.733">
+  <testcase classname="testWikipedia.TestWikiMainPage" name="testTalk" time="1.946">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiMainPage" name="setUp" time="0.734">
+  <testcase classname="testWikipedia.TestWikiMainPage" name="setUp" time="1.946">
     <skipped/>
   </testcase>
-  <testcase classname="testWikipedia.TestWikiMainPage" name="testViewHistorybtn" time="0.734">
+  <testcase classname="testWikipedia.TestWikiMainPage" name="testViewHistorybtn" time="1.947">
     <skipped/>
   </testcase>
 </testsuite>

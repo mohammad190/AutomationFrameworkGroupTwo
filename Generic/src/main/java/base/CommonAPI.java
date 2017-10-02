@@ -30,9 +30,9 @@ public class CommonAPI {
 
     private String saucelabs_username = "ibrahimkhan1994";
     private String saucelabs_accesskey = "580ce2de-5196-415d-9486-721c3640de74";
-    private String browserstack_username = "sayem991";
-    private String browserstack_accesskey = "p3yyfzCAhLyz92aajAAK";
-    
+    private String browserstack_username = "smsayem1";
+    private String browserstack_accesskey = "SwTbqxJ5iGptvemkGz7H";
+
     @Parameters({"useCloudEnv", "cloudEnvName", "platform", "platformVersion", "browserName", "browserVersion" , "url", "pathForReports", "testName"})
     @BeforeMethod
     public void setUp(@Optional boolean useCloudEnv,@Optional String cloudEnvName,@Optional String platform,@Optional String platformVersion,
