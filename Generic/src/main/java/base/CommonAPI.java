@@ -19,6 +19,9 @@ import reporting.ExtentFactory;
 
 import java.io.*;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class CommonAPI {
@@ -48,12 +51,12 @@ public class CommonAPI {
         } else {
             get_Local_Driver(platform, browserName, pathForReports, testName);
         }
-            driver.manage().window().maximize();
-            test.log(LogStatus.INFO, "Browser Maximized.");
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-            driver.navigate().to(url);
-            test.log(LogStatus.INFO, "Web Application Opened.");
+        driver.manage().window().maximize();
+        test.log(LogStatus.INFO, "Browser Maximized.");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.navigate().to(url);
+        test.log(LogStatus.INFO, "Web Application Opened.");
     }
 
     public WebDriver get_Local_Driver(String platform, String browserName, String pathForReports, String testName) {
@@ -93,10 +96,10 @@ public class CommonAPI {
             } else {
                 System.err.println("ERROR: Choose from: Firefox/Chrome/IE/Opera.");
                 test.log(LogStatus.INFO, "Invalid Choice Of Driver.");
-                }
             }
-            return driver;
         }
+        return driver;
+    }
 
     public WebDriver get_Cloud_Driver(String cloudEnvName, String envUsername, String envAccessKey, String platform,
                                       String platformVersion, String browserName, String browserVersion,
@@ -121,25 +124,23 @@ public class CommonAPI {
         return driver;
     }
 
-    @Parameters({"directoryPath"})
     @AfterMethod
-    public void close_Browser(ITestResult testResult, @Optional String directoryPath) throws IOException {
+    public void close_Browser(ITestResult testResult) throws IOException {
 
         String path = null;
         String imagePath = null;
-
-        if(testResult.getStatus() != ITestResult.SUCCESS) {
-            path = takeScreenShot(driver, testResult.getName(), directoryPath);
+        if (testResult.getStatus() == ITestResult.FAILURE) {
+            path = captureScreenshot(driver, testResult.getName());
             imagePath = test.addScreenCapture(path);
             test.log(LogStatus.FAIL, "Failed Test Case", imagePath);
-            driver.quit();
-            report.endTest(test);
-            report.flush();
-        } else {
-            driver.quit();
-            report.endTest(test);
-            report.flush();
+        } else if (testResult.getStatus() == ITestResult.SUCCESS) {
+            path = captureScreenshot(driver, testResult.getName());
+            imagePath = test.addScreenCapture(path);
+            test.log(LogStatus.PASS, "Passed Test Case", imagePath);
         }
+        report.endTest(test);
+        report.flush();
+        driver.quit();
     }
 
     public void okAlert(){
@@ -197,5 +198,19 @@ public class CommonAPI {
         FileUtils.copyFile(sourceFile, new File(Path + fileName));
         String destination = Path + fileName;
         return destination;
+    }
+
+    public static String captureScreenshot(WebDriver driver, String screenshotName) {
+        DateFormat dateFormat = new SimpleDateFormat("(MM.dd.yyyy-HH:mma)");
+        Date date = new Date();
+        dateFormat.format(date);
+
+        File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(file, new File(System.getProperty("user.dir") + "/screenshots/" + screenshotName + " " + dateFormat.format(date) + ".png"));
+        } catch (IOException e) {
+            System.out.println("Exception while taking screenshot " + e.getMessage());
+        }
+        return screenshotName;
     }
 }
