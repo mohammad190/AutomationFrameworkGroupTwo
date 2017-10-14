@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import reporting.ExtentFactory;
+import reporting.ExtentManager;
 
 import java.io.*;
 import java.net.URL;
@@ -36,20 +36,20 @@ public class CommonAPI {
     private String browserstack_username = "sayem991";
     private String browserstack_accesskey = "p3yyfzCAhLyz92aajAAK";
 
-    @Parameters({"useCloudEnv", "cloudEnvName", "platform", "platformVersion", "browserName", "browserVersion" , "url", "pathForReports", "testName"})
+    @Parameters({"useCloudEnv", "cloudEnvName", "platform", "platformVersion", "browserName", "browserVersion" , "url", "testName"})
     @BeforeMethod
     public void setUp(@Optional boolean useCloudEnv,@Optional String cloudEnvName,@Optional String platform,@Optional String platformVersion,
                       @Optional String browserName, @Optional String browserVersion,
-                      @Optional String url, @Optional String pathForReports, @Optional String testName) throws Exception {
+                      @Optional String url, @Optional String testName) throws Exception {
 
         if (useCloudEnv == true) {
             if(cloudEnvName.equalsIgnoreCase("Browserstack")) {
-                get_Cloud_Driver(cloudEnvName, browserstack_username, browserstack_accesskey, platform, platformVersion, browserName, browserVersion, pathForReports, testName);
+                get_Cloud_Driver(cloudEnvName, browserstack_username, browserstack_accesskey, platform, platformVersion, browserName, browserVersion, testName);
             } else if (cloudEnvName.equalsIgnoreCase("Saucelabs")) {
-                get_Cloud_Driver(cloudEnvName, saucelabs_username, saucelabs_accesskey, platform, platformVersion, browserName, browserVersion, pathForReports, testName);
+                get_Cloud_Driver(cloudEnvName, saucelabs_username, saucelabs_accesskey, platform, platformVersion, browserName, browserVersion, testName);
             }
         } else {
-            get_Local_Driver(platform, browserName, pathForReports, testName);
+            get_Local_Driver(platform, browserName, testName);
         }
         driver.manage().window().maximize();
         test.log(LogStatus.INFO, "Browser Maximized.");
@@ -59,9 +59,9 @@ public class CommonAPI {
         test.log(LogStatus.INFO, "Web Application Opened.");
     }
 
-    public WebDriver get_Local_Driver(String platform, String browserName, String pathForReports, String testName) {
+    public WebDriver get_Local_Driver(String platform, String browserName, String testName) {
 
-        report = ExtentFactory.getInstance(pathForReports);
+        report = ExtentManager.getInstance();
         test = report.startTest(testName);
 
         if (platform.contains("macOS")) {
@@ -103,9 +103,9 @@ public class CommonAPI {
 
     public WebDriver get_Cloud_Driver(String cloudEnvName, String envUsername, String envAccessKey, String platform,
                                       String platformVersion, String browserName, String browserVersion,
-                                      String pathForReports, String testName) throws Exception {
+                                      String testName) throws Exception {
 
-        report = ExtentFactory.getInstance(pathForReports);
+        report = ExtentManager.getInstance();
         test = report.startTest(testName);
 
         DesiredCapabilities cap = new DesiredCapabilities();
